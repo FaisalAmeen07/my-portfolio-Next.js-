@@ -1,7 +1,6 @@
-"use client";
-import React, { useEffect } from "react";
-import { useSearchParams } from "next/navigation";
-import { scroller } from "react-scroll";
+// app/page.js
+import { Suspense } from "react";
+import ScrollWrapper from "./component/ScrollWrapper.jsx"; // New file
 import HeroSection from "./component/Hero.jsx";
 import SkillsSection from "./component/Skill-section.jsx";
 import Projects from "./component/Projects.jsx";
@@ -9,25 +8,17 @@ import Education from "./component/Education.jsx";
 import Services from "./component/Services.jsx";
 import Contact from "./component/Contact.jsx";
 
+// Loading UI for Suspense (Aap isay achha design de sakte hain)
+const Loading = () => <div className="text-center p-20">Loading...</div>; 
+
 const Page = () => {
-  const searchParams = useSearchParams();
-  const scrollTo = searchParams.get("scrollTo");
-
-  useEffect(() => {
-    if (scrollTo) {
-      // wait a short time so the sections are mounted before scrolling
-      setTimeout(() => {
-        scroller.scrollTo(scrollTo, {
-          duration: 600,
-          smooth: "easeInOutQuart",
-          offset: -80, // adjust to your navbar height
-        });
-      }, 300);
-    }
-  }, [scrollTo]);
-
   return (
     <>
+      {/* ScrollWrapper ko Suspense ke andar rakha jayega */}
+      <Suspense fallback={<Loading />}>
+        <ScrollWrapper />
+      </Suspense>
+
       <section id="heroSection">
         <HeroSection />
       </section>
