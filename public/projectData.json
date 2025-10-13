@@ -1,0 +1,128 @@
+[
+  {
+    "_id": 1,
+    "projectName": "Luxury Hotel",
+    "projectImage": "./Luxury-hotel.png",
+    "slogan": "Luxury Hotel Site built with HTML, Bootstrap, and Javascript. The main focus is responsive on all devices.",
+    "features": [
+      "Fully Responsive Design",
+      "Elegant & Modern UI",
+      "Interactive Navigation Bar",
+      "Hero Section with Call-to-Action",
+      "Contact & Booking Form",
+      "Footer with Social Links"
+    ],
+    "technologies": [
+      "HTML5",
+      "CSS",
+      "Bootstrap 5",
+      "JavaScript",
+      "Font Awesome",
+      "Bootstrap-icons",
+      "Swiper"
+    ],
+    "liveLink": "https://luxury-hotel-web.netlify.app/",
+    "clientLink": "https://github.com/FaisalAmeen07/Luxury-Hotel-site-html_bootstrap_js-",
+    "description": "The Luxury Hotel Website is a modern, elegant, and fully responsive front-end project built with HTML and CSS. It features a visually appealing design that showcases premium hospitality services, rooms, and amenities with smooth layouts and refined typography. Designed with user experience in mind, the site adapts seamlessly to all screen sizes, offering a luxurious browsing experience on both desktop and mobile devices."
+  },
+  {
+    "_id": 2,
+    "projectName": "Currency Converter",
+    "projectImage": "./Currency.png",
+    "slogan": "Built a Currency Converter application using React.js and Fetch API to display live exchange rates for multiple countries.",
+    "features": [
+      "Real-time currency conversion",
+      "User-friendly interface",
+      "Responsive design for all devices",
+      "Fetches live exchange rates from a public API",
+      "Supports all currencies but I focused on 10 major ones"
+    ],
+    "technologies": ["React.js", "Fetch API", "CSS", "HTML5", "Tailwind CSS"],
+    "liveLink": "https://currency-conversion-wbsite.netlify.app/",
+    "clientLink": "https://github.com/FaisalAmeen07/",
+    "description": "The Currency Converter is a responsive web app that allows users to convert between different currencies in real-time. Built using HTML, CSS, and JavaScript, it integrates a Live Currency API for up-to-date exchange rates and a Flags API to visually represent countries. Designed for speed and simplicity, it ensures an intuitive and seamless experience across all devices."
+  },
+  {
+    "_id": 3,
+    "projectName": "Ecommerce Website",
+    "projectImage": "./E-shop.png",
+    "slogan": "A responsive and dynamic eCommerce experience powered by React.Js and usefull Statement Like ContextApi.",
+    "features": [
+      "Dynamic Product Data: Integrated with a third-party API to fetch and display live product listings.",
+      "Context API State Management: Smooth global state handling for cart, filters, and product data without prop drilling.",
+      "Advanced Filtering System: Filter products by brand, price range, and category for a seamless shopping experience.",
+      "Responsive UI: Fully responsive design that adapts perfectly to all screen sizes and devices.",
+      "Reusable Components: Built with modular React components to ensure scalability and maintainability.",
+      "Fast & Smooth UX: Optimized rendering and interactive elements for a modern, app-like shopping feel."
+    ],
+    "technologies": [
+      "React 19 (Vite)",
+      "React Router",
+      "Axios",
+      "Tailwind CSS",
+      "Swiper",
+      "Context API",
+      "Product Dummy API"
+    ],
+    "liveLink": "https://e-shop-ecommerce-complete-front-end.vercel.app/",
+    "clientLink": "https://github.com/FaisalAmeen07/E-Shop_Ecommerce_Complete_FrontEnd-React.JS",
+    "description": "A modern Frontend E-Commerce website built with React that uses Context API for state management and integrates live product data from a third-party API. The platform allows users to explore products effortlessly with advanced filters based on brand and price range. Designed with a responsive layout, it ensures a smooth shopping experience across all devices. The project emphasizes reusable components and optimized performance to deliver a fast, app-like user experience."
+  },
+  {
+    "_id": 4,
+    "projectName": "Tic-Tac-Toy",
+    "projectImage": "./tic-tac-toy.png",
+    "slogan": "Tic Tac Toy is a interactive browser-based game built using pure HTML, CSS, and JavaScript. It features smooth gameplay.",
+    "features": [
+      "Interactive Gameplay: Two-player mode with smooth turn-based interaction.",
+      "Smart Game Logic: Detects win, draw, and reset conditions automatically.",
+      "Clean UI Design: Simple and attractive layout built using HTML and CSS.",
+      "Responsive Layout: Fully functional on desktop, tablet, and mobile screens.",
+      "Restart Option: Instantly reset the board and start a new game.",
+      "Lightweight & Fast: Built purely with vanilla JavaScript, no frameworks required."
+    ],
+    "technologies": ["HTML5", "CSS3", "JavaScript", "vercel"],
+    "liveLink": "https://tic-tac-toy-javascript.vercel.app/",
+    "clientLink": "https://github.com/FaisalAmeen07/Tic-Tac-Toy-Javascript",
+    "serverLink": "N/A",
+    "description": "A classic Tic Tac Toe game built using HTML, CSS, and JavaScript. This project focuses on JavaScript’s core logic building — handling turns, checking winning conditions, and updating the UI dynamically. The game features a clean interface and smooth user interaction, offering a fun and responsive experience for all devices."
+  },
+  {
+    "_id": 5,
+    "projectName": "E-landing-page",
+    "projectImage": "./shop-commernce.jpg",
+    "slogan": "The Simple Ecommerence page landingPage built using pure HTML, CSS, and MediaQuery.",
+    "features": [
+      "Interactive Landing Page: Simple UI , attractive =.",
+      "Clean UI Design: Simple and attractive layout built using HTML and CSS.",
+      "Responsive Layout: Fully functional on desktop, tablet, and mobile screens.",
+      "Lightweight & Fast: Built purely with HTML , CSS, no frameworks required."
+    ],
+    "technologies": ["HTML5", "CSS3", "Media-Query", "vercel"],
+    "liveLink": "https://tic-tac-toy-javascript.vercel.app/",
+    "clientLink": "https://github.com/FaisalAmeen07/Tic-Tac-Toy-Javascript",
+    "description": "A Simple and attractive layout built using HTML, CSS, and MediaQuery. This project focuses on MediaQuery that responsive on Multiple size of Screen. "
+  },
+  {
+    "_id": 6,
+    "projectName": "My Portfolio",
+    "projectImage": "./portfolioSs.png",
+    "slogan": "Developed a modern and responsive personal portfolio website using Next.js. and Tailwind CSS.",
+    "features": [
+      "Next.js routing for fast and dynamic navigation",
+      "Tailwind CSS for a fully responsive and clean UI design",
+      "Framer Motion animations for smooth and interactive transitions",
+      "Integrated Email.js for real-time message sending",
+      "SEO-optimized and performance-focused build"
+    ],
+    "technologies": ["Next.js",
+    "React.js",
+    "Tailwind CSS",
+    "Framer Motion",
+    "Email.js",
+    "Lucide React Icons"],
+    "liveLink": "https://my-portfolio.vercel.app/",
+    "clientLink": "https://github.com/FaisalAmeen07/my-portfolio-Next.js-",
+    "description": "Developed a modern and responsive personal portfolio website using Next.js and Tailwind CSS with smooth Framer Motion animations. Integrated Email.js for direct contact form submissions. The site showcases projects, skills, and experience with a clean, user-friendly design that adapts seamlessly across all devices."
+  }
+]
