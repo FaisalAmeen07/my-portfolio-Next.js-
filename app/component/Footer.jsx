@@ -35,7 +35,7 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
 
           {/* Left Side: Name and Nav Links */}
-          <div className="flex flex-col items-center gap-4 md:items-start">
+          <div className="flex flex-col items-center gap-4 md:items-start text-white">
             <h3 className="text-xl font-semibold">{footerConfig.name}</h3>
             <p>Tech enthusiast with a passion for design, travel and creativity.</p>
           </div>

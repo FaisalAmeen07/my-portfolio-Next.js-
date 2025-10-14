@@ -27,7 +27,7 @@ export default function Projects() {
       <header className="text-center mb-16">
         <div className="flex items-center justify-center gap-4">
           <div className="w-[2px] h-12 bg-[#f56d47]"></div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-center">
+          <h2 className="text-4xl lg:text-5xl font-bold text-center text-white">
             My Digital <span className="text-[#fa643a]">Creations</span>
           </h2>
           <div className="w-[2px] h-12 bg-[#f56d47]"></div>

@@ -121,11 +121,11 @@ export default function HeroSection() {
         viewport={{ once: false }}
         className="flex-1 flex flex-col items-center md:items-start text-center md:text-left"
       >
-        <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 bg-[#f4623a]/80 border border-[#f56c46] dark:border-[#f4623a] rounded-full text-xs sm:text-sm text-white dark:text-[#fff] backdrop-blur-sm hover:bg-[#e8886e] dark:hover:bg-[#f4623a]/20 transition-all duration-300">
+        <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 bg-[#f4623a]/80 border border-[#f56c46] dark:border-[#f4623a] rounded-full text-xs sm:text-sm text-white backdrop-blur-sm hover:bg-[#e8886e] dark:hover:bg-[#f4623a]/20 transition-all duration-300">
           Welcome to my world of code and creativity.
         </div>
 
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-200">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">
           Hi, I am
         </h1>
 

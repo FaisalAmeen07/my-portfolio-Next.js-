@@ -146,13 +146,13 @@ export default function Services() {
             <div className="w-[2px] h-12 bg-[#f4623a]"></div>
             <h2
               id="services-title"
-              className="text-4xl lg:text-5xl font-bold text-center"
+              className="text-4xl lg:text-5xl font-bold text-center text-white"
             >
               My Expert <span className="text-[#f4623a]"> Services</span>
             </h2>
             <div className="w-[2px] h-12 bg-[#f4623a]"></div>
           </div>
-          <p className="text-sm my-6 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm my-6 max-w-3xl mx-auto leading-relaxed text-white">
             I provide a wide range of services to turn your ideas into reality.
             Here's how I can help you succeed.
           </p>
