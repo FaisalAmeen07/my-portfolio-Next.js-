@@ -43,9 +43,10 @@ export default function Projects() {
           A selection of projects where I've turned complex problems into elegant, user-friendly solutions.
         </motion.p>
       </header>
+      <br/>
 
   
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-24">
         {projects.map((project, index) => (
           <motion.article
             key={project._id}
@@ -56,7 +57,7 @@ export default function Projects() {
             className="group relative"
             aria-labelledby={`project-title-${project._id}`}
           >
-            <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-10/12 z-20 transition-all duration-500 ease-in-out group-hover:-translate-y-2 group-hover:scale-105">
+            <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-10/12 z-20 transition-all duration-500 ease-in-out group-hover:-translate-y-2 group-hover:scale-105">
               <img
                 src={project.projectImage}
                 alt={`Screenshot of ${project.projectName}`}

@@ -142,7 +142,7 @@ export default function HeroSection() {
           “I'm a Frontend-focused MERN Stack Developer passionate about building
           fast, responsive, and scalable web applications. Skilled in React.js,
           Next.js, Express.js, and MongoDB, I create intuitive, user-centered
-          interfaces using Tailwind CSS, Shadcn UI, and Bootstrap. In addition,
+          interfaces using Tailwind CSS,and Bootstrap. In addition,
           I build dynamic and visually engaging WordPress websites with
           Elementor, blending modern design with clean, efficient code.
          ”
