@@ -138,7 +138,7 @@ export default function HeroSection() {
           <Cursor cursorStyle="_" />
         </h2>
 
-        <p className="mt-3 max-w-xl text-lg sm:text-base italic">
+        <p className="mt-3 max-w-xl text-lg sm:text-base italic text-white">
           “I'm a Frontend-focused MERN Stack Developer passionate about building
           fast, responsive, and scalable web applications. Skilled in React.js,
           Next.js, Express.js, and MongoDB, I create intuitive, user-centered
