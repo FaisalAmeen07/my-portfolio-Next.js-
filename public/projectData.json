@@ -99,7 +99,7 @@
       "Lightweight & Fast: Built purely with HTML , CSS, no frameworks required."
     ],
     "technologies": ["HTML5", "CSS3", "Media-Query", "vercel"],
-    "liveLink": "https://tic-tac-toy-javascript.vercel.app/",
+    "liveLink": "https://capital-shop-ecommernce-landing-page.netlify.app/",
     "clientLink": "https://github.com/FaisalAmeen07/Tic-Tac-Toy-Javascript",
     "description": "A Simple and attractive layout built using HTML, CSS, and MediaQuery. This project focuses on MediaQuery that responsive on Multiple size of Screen. "
   },
@@ -121,7 +121,7 @@
     "Framer Motion",
     "Email.js",
     "Lucide React Icons"],
-    "liveLink": "https://my-portfolio.netlify.app/",
+    "liveLink": "https://my-portfolio-pink-two-33.vercel.app/",
     "clientLink": "https://github.com/FaisalAmeen07/my-portfolio-Next.js-",
     "description": "Developed a modern and responsive personal portfolio website using Next.js and Tailwind CSS with smooth Framer Motion animations. Integrated Email.js for direct contact form submissions. The site showcases projects, skills, and experience with a clean, user-friendly design that adapts seamlessly across all devices."
   }
