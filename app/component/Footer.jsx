@@ -1,11 +1,24 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Home, Code, FolderGit2, Briefcase, PhoneCall, FileText } from 'lucide-react';
+import { FaCode } from "react-icons/fa";
 
 // Centralized configuration for easier updates
 const footerConfig = {
-  name: "Faisal Ameen",
+  name: "Faisal Amin",
+  tagline: "FrontEnd Developer",
+  description: "Tech enthusiast with a passion for design, travel and creativity.",
+  
+  // Navigation links matching your header
+  navLinks: [
+    { name: "Home", path: "heroSection", icon: <Home size={16} /> },
+    { name: "Skills", path: "skillsSection", icon: <Code size={16} /> },
+    { name: "Projects", path: "projectsSection", icon: <FolderGit2 size={16} /> },
+    { name: "Services", path: "servicesSection", icon: <Briefcase size={16} /> },
+    { name: "Contact", path: "contactSection", icon: <PhoneCall size={16} /> },
+    { name: "Resume", path: "/resume", icon: <FileText size={16} />, external: true },
+  ],
 
   socialLinks: [
     { 
@@ -21,7 +34,7 @@ const footerConfig = {
     { 
       label: 'Mail', 
       icon: Mail, 
-      href: 'odeveloper56@gmail.com' 
+      href: 'mailto:odeveloper56@gmail.com' 
     },
   ],
 };
@@ -29,38 +42,111 @@ const footerConfig = {
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  return (
-    <footer className="bg-black/50 backdrop-blur-md border-t border-white/20 mt-20">
-      <div className="container mx-auto px-4 lg:px-20 py-10">
-        <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
+  const scrollToSection = (sectionId) => {
+    if (typeof window !== 'undefined') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
-          {/* Left Side: Name and Nav Links */}
-          <div className="flex flex-col items-center gap-4 md:items-start text-white">
-            <h3 className="text-xl font-semibold">{footerConfig.name}</h3>
-            <p>Tech enthusiast with a passion for design, travel and creativity.</p>
+  return (
+    <footer className="bg-white backdrop-blur-md border-t border-[#2ec4b6]/20 mt-20 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-10 left-10 w-20 h-20 bg-[#2ec4b6] rounded-full blur-xl"></div>
+        <div className="absolute bottom-10 right-10 w-32 h-32 bg-[#2ec4b6] rounded-full blur-xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 lg:px-20 py-12 relative z-10">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+          
+          {/* Brand Section */}
+          <div className="flex flex-col items-center lg:items-start gap-4 text-[#37373e]">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#2ec4b6] to-[#1a8a7d] rounded-lg flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                <span className="text-white font-bold text-xl"><FaCode/></span>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-bold text-gray-800 text-xl leading-5">
+                  {footerConfig.name}
+                </span>
+                <span className="text-gray-500 text-xs font-medium">
+                  {footerConfig.tagline}
+                </span>
+              </div>
+            </Link>
+            <p className="text-sm text-center lg:text-left max-w-xs mt-2">
+              {footerConfig.description}
+            </p>
           </div>
 
-          {/* Right Side: Social Icons */}
-          <div className="flex items-center gap-5">
-            {footerConfig.socialLinks.map((social) => (
-              <a 
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-                className="text-[#f38d70] transition-all duration-300 hover:text-[#e75b35] hover:scale-110"
-              >
-                <social.icon className="h-6 w-6" />
-              </a>
-            ))}
+          {/* Navigation Links */}
+          <div className="flex flex-col items-center lg:items-start">
+            <h3 className="text-lg font-semibold text-[#2ec4b6] mb-4">Quick Links</h3>
+            <div className="grid grid-cols-2 gap-3">
+              {footerConfig.navLinks.map((item) => (
+                <div key={item.name}>
+                  {item.external ? (
+                    <Link
+                      href={item.path}
+                      className="flex items-center gap-2 text-[#37373e] hover:text-[#2ec4b6] transition-all duration-300 hover:translate-x-1 group text-sm"
+                    >
+                      <span className="group-hover:opacity-100 transition-opacity duration-300">
+                        {item.icon}
+                      </span>
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => scrollToSection(item.path)}
+                      className="flex items-center gap-2 text-[#37373e] hover:text-[#2ec4b6] transition-all duration-300 hover:translate-x-1 group text-sm w-full text-left"
+                    >
+                      <span className="group-hover:opacity-100 transition-opacity duration-300">
+                        {item.icon}
+                      </span>
+                      {item.name}
+                    </button>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Social & Contact */}
+          <div className="flex flex-col items-center lg:items-start">
+            <h3 className="text-lg font-semibold text-[#2ec4b6] mb-4">Let's Connect</h3>
+            <p className="text-sm text-[#37373e] mb-4 text-center lg:text-left">
+              Ready to bring your ideas to life? Let's work together!
+            </p>
+            
+            {/* Social Icons */}
+            <div className="flex items-center gap-4">
+              {footerConfig.socialLinks.map((social) => (
+                <a 
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="bg-white p-3 rounded-xl shadow-lg border border-gray-100 text-[#37373e] transition-all duration-300 hover:bg-[#2ec4b6] hover:text-white hover:scale-110 hover:shadow-2xl hover:shadow-[#2ec4b6]/20"
+                >
+                  <social.icon className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Bottom: Copyright Information */}
-        <div className="mt-8 border-t border-slate-800 pt-6 text-center">
-          <p className="text-sm text-slate-400">
-            &copy; {currentYear} {footerConfig.name}. All Rights Reserved.
+        <div className="border-t border-[#2ec4b6]/30 pt-6 text-center">
+          <p className="text-sm text-[#37373e]">
+            &copy; {currentYear} <span className='text-[#2ec4b6] font-semibold'>{footerConfig.name}</span>. All Rights Reserved.
+          </p>
+          <p className="text-xs text-gray-500 mt-2">
+            Crafted with using Next.js & Tailwind CSS
           </p>
         </div>
       </div>

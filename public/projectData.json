@@ -106,7 +106,7 @@
   {
     "_id": 6,
     "projectName": "My Portfolio",
-    "projectImage": "./portfolioSs.png",
+    "projectImage": "./Portfollio.png",
     "slogan": "Developed a modern and responsive personal portfolio website using Next.js. and Tailwind CSS.",
     "features": [
       "Next.js routing for fast and dynamic navigation",

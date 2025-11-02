@@ -54,7 +54,7 @@ const services = [
       "Elementor & Gutenberg",
       "Speed & SEO Optimization",
     ],
-    themeColor: "orange",
+    themeColor: "blue",
   },
   {
     icon: <Cloud className="w-8 h-8 lg:w-12 lg:h-12" />,
@@ -62,49 +62,49 @@ const services = [
     description:
       "Seamless deployment and management of full-stack apps on modern cloud platforms.",
     points: ["Vercel & Netlify", "GitHub", "Production Optimization"],
-    themeColor: "red",
+    themeColor: "sky",
   },
 ];
 
 const themeStyles = {
-  violet: {
+  sky: {
     border: "border-violet-500/30",
     gradientIndicator: "bg-gradient-to-b from-violet-500 to-violet-400",
     gradientIcon: "bg-gradient-to-br from-violet-500 to-violet-400",
-    text: "text-violet-400",
-    bg: "bg-violet-500/10",
+    text: "text-[#9a6eff]",
+    bg: "bg-white",
     shadow: "shadow-violet-500/20",
   },
   pink: {
     border: "border-pink-500/30",
     gradientIndicator: "bg-gradient-to-b from-pink-500 to-pink-400",
     gradientIcon: "bg-gradient-to-br from-pink-500 to-pink-400",
-    text: "text-pink-400",
-    bg: "bg-pink-500/10",
+    text: "text-[#fa53ab]",
+    bg: "bg-white",
     shadow: "shadow-pink-500/20",
   },
   green: {
     border: "border-green-500/30",
     gradientIndicator: "bg-gradient-to-b from-green-500 to-green-400",
     gradientIcon: "bg-gradient-to-br from-green-500 to-green-400",
-    text: "text-green-400",
-    bg: "bg-green-500/10",
+    text: "text-green-600",
+    bg: "bg-white",
     shadow: "shadow-green-500/20",
   },
-  orange: {
-    border: "border-orange-500/30",
-    gradientIndicator: "bg-gradient-to-b from-orange-500 to-orange-400",
-    gradientIcon: "bg-gradient-to-br from-orange-500 to-orange-400",
-    text: "text-orange-400",
-    bg: "bg-orange-500/10",
+  blue: {
+    border: "border-blue-500/30",
+    gradientIndicator: "bg-gradient-to-br from-blue-500 to-blue-400",
+    gradientIcon: "bg-gradient-to-br from-blue-500 to-blue-400",
+    text: "text-[#4967ea]",
+    bg: "bg-white",
     shadow: "shadow-orange-500/20",
   },
   red: {
     border: "border-red-500/30",
     gradientIndicator: "bg-gradient-to-b from-red-500 to-red-400",
     gradientIcon: "bg-gradient-to-br from-red-500 to-red-400",
-    text: "text-red-400",
-    bg: "bg-red-500/10",
+    text: "text-[#fd474c]",
+    bg: "bg-white",
     shadow: "shadow-red-500/20",
   },
 };
@@ -134,7 +134,7 @@ export default function Services() {
 
   return (
     <section className="overflow-hidden" aria-labelledby="services-title">
-      <div className="container mx-auto px-4 lg:px-20">
+      <div className="container mx-auto px-4 lg:px-20 border-blue-800">
         <motion.header
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -143,22 +143,22 @@ export default function Services() {
           className="text-center"
         >
           <div className="flex items-center justify-center gap-4">
-            <div className="w-[2px] h-12 bg-[#f4623a]"></div>
+            <div className="w-[2px] h-12 bg-[#2ec4b6]"></div>
             <h2
               id="services-title"
-              className="text-4xl lg:text-5xl font-bold text-center text-white"
+              className="text-4xl lg:text-5xl font-bold text-center text-[#37373e]"
             >
-              My Expert <span className="text-[#f4623a]"> Services</span>
+              My Expert <span className="text-[#2ec4b6]"> Services</span>
             </h2>
-            <div className="w-[2px] h-12 bg-[#f4623a]"></div>
+            <div className="w-[2px] h-12 bg-[#2ec4b6]"></div>
           </div>
-          <p className="text-sm my-6 max-w-3xl mx-auto leading-relaxed text-white">
+          <p className="text-sm my-6 max-w-3xl mx-auto leading-relaxed text-[#37373e]">
             I provide a wide range of services to turn your ideas into reality.
             Here's how I can help you succeed.
           </p>
         </motion.header>
 
-        <div className="hidden lg:flex flex-col lg:flex-row gap-10 lg:gap-16 min-h-[450px]">
+        <div className="hidden lg:flex flex-col lg:flex-row gap-10 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -170,12 +170,12 @@ export default function Services() {
               <button
                 key={service.title}
                 onClick={() => setActiveIndex(index)}
-                className={`relative text-left w-full p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950 ${
+                className={`relative text-left w-full p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950 group ${
                   activeIndex === index
-                    ? `bg-gray-900/50 shadow-lg ${
+                    ? `bg-[#2ec4b6] text-white shadow-lg ${
                         themeStyles[service.themeColor].border
                       }`
-                    : "hover:bg-gray-800/60 border border-transparent"
+                    : "bg-white text-[#37373e] border border-gray-200 hover:bg-[#2ec4b6] hover:text-white"
                 }`}
               >
                 {activeIndex === index && (
@@ -189,8 +189,8 @@ export default function Services() {
                 <span
                   className={`text-xl font-semibold transition-colors duration-300 pl-4 ${
                     activeIndex === index
-                      ? themeStyles[service.themeColor].text
-                      : "text-gray-300"
+                      ? "text-white"
+                      : "text-[#37373e] group-hover:text-white"
                   }`}
                 >
                   {service.title}
@@ -207,17 +207,17 @@ export default function Services() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -30, scale: 0.95 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                className={`w-full p-8 rounded-2xl border border-gray-700 shadow-xl backdrop-blur-md ${activeTheme.bg}`}
+                className={`w-full p-8 rounded-2xl shadow-xl backdrop-blur-md ${activeTheme.bg}`}
               >
                 <div
                   className={`mb-6 inline-block p-4 rounded-full shadow-md border border-white/10 ${activeTheme.gradientIcon}`}
                 >
                   {activeService.icon}
                 </div>
-                <h3 className="text-3xl font-extrabold mb-4 text-white">
+                <h3 className="text-3xl font-extrabold mb-4 text-[#2ec4b6]">
                   {activeService.title}
                 </h3>
-                <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+                <p className="text-lg text-[#37373e] mb-8 leading-relaxed">
                   {activeService.description}
                 </p>
                 <ul className="space-y-4">
@@ -232,7 +232,7 @@ export default function Services() {
                       <CheckCircle2
                         className={`w-6 h-6 flex-shrink-0 ${activeTheme.text}`}
                       />
-                      <span className="text-lg text-gray-300">{point}</span>
+                      <span className="text-lg text-[#37373e]">{point}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -253,7 +253,7 @@ export default function Services() {
             return (
               <motion.div
                 key={index}
-                className="group relative flex flex-col p-6 rounded-2xl backdrop-blur-sm border border-gray-800 transition-all duration-300 hover:border-violet-500 hover:shadow-2xl hover:shadow-violet-500/10 transform hover:-translate-y-2"
+                className="group relative flex flex-col p-6 rounded-2xl bg-white backdrop-blur-sm shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/10 transform hover:-translate-y-2"
                 variants={cardVariants}
               >
                 <div
@@ -261,10 +261,10 @@ export default function Services() {
                 >
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-gray-100 mb-2">
+                <h3 className="text-2xl font-bold text-[#2ec4b6] mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-400 mb-6 flex-grow">
+                <p className="text-[#37373e] mb-6 flex-grow">
                   {service.description}
                 </p>
                 <ul className="space-y-3">
@@ -273,7 +273,7 @@ export default function Services() {
                       <CheckCircle2
                         className={`w-5 h-5 flex-shrink-0 ${serviceTheme.text}`}
                       />
-                      <span className="text-gray-300">{point}</span>
+                      <span className="text-[#37373e]">{point}</span>
                     </li>
                   ))}
                 </ul>

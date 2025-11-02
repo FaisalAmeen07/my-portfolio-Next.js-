@@ -26,7 +26,7 @@ const marqueeSkills2 = [
 const Marquee = ({ skills, direction = "forwards" }) => {
   return (
     <div
-      className="max-w-full overflow-hidden"
+      className="max-w-full py-2"
       style={{
         maskImage:
           "linear-gradient(to right, transparent, black 2rem, black calc(100% - 2rem), transparent)",
@@ -39,16 +39,16 @@ const Marquee = ({ skills, direction = "forwards" }) => {
         {[...skills, ...skills].map((skill, index) => (
           <div
             key={index}
-            className="flex-shrink-0 flex flex-col items-center justify-center bg-gray-900/40 border border-[#f3886b83] rounded-2xl text-white w-[120px] h-[120px] mx-2 transition-all duration-300 group hover:border-[#ee5c34] hover:rotate-360"
+            className="flex-shrink-0 flex flex-col items-center justify-center bg-white rounded-2xl text-white w-[120px] h-[120px] mx-2 transition-all duration-300 hover:scale-115 border-2 border-transparent"
           >
             <Icon
-    icon={skill.icon}
-    className="w-12 h-12 transition-transform duration-300 group-hover:scale-110"
-    style={{ color: skill.color }} // ✅ Correct way
-  />
-  <span className="mt-2 text-xs text-gray-400 group-hover:text-violet-300 transition-colors">
-    {skill.name}
-  </span>
+              icon={skill.icon}
+              className="w-12 h-12 transition-transform duration-300 group-hover:scale-110"
+              style={{ color: skill.color }} // ✅ Correct way
+            />
+            <span className="mt-2 text-xs text-[#242f30] group-hover:text-[#2ec4b6] transition-colors">
+              {skill.name}
+            </span>
           </div>
         ))}
       </div>

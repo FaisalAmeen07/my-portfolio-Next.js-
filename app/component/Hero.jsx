@@ -33,7 +33,7 @@ const SocialIcon = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={link.label}
-          className="text-gray-400 hover:text-[#f46d48] transition-colors duration-300"
+          className="text-black hover:text-[#2ec4b6] transition-colors duration-300"
         >
           {link.icon}
         </a>
@@ -121,24 +121,24 @@ export default function HeroSection() {
         viewport={{ once: false }}
         className="flex-1 flex flex-col items-center md:items-start text-center md:text-left"
       >
-        <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 bg-[#f4623a]/80 border border-[#f56c46] dark:border-[#f4623a] rounded-full text-xs sm:text-sm text-white backdrop-blur-sm hover:bg-[#e8886e] dark:hover:bg-[#f4623a]/20 transition-all duration-300">
+        <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 bg-[#2ec4b6] rounded-full text-xs sm:text-sm text-white backdrop-blur-sm hover:bg-[#0fdac5] dark:hover:bg-[#2ec4b6]/50 transition-all duration-300">
           Welcome to my world of code and creativity.
         </div>
 
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-black">
           Hi, I am
         </h1>
 
-        <span className="text-3xl sm:text-4xl md:text-5xl font-bold mt-2 text-[#ef6944] ml-0 md:ml-10">
+        <span className="text-3xl sm:text-4xl md:text-5xl font-bold mt-2 text-[#2ec4b6] ml-0 md:ml-10">
           Faisal Amin
         </span>
 
-        <h2 className="mt-4 text-lg sm:text-xl md:text-2xl font-medium text-[#ee5126] dark:text-[#ef6e4a] flex justify-center md:justify-start items-center h-8">
+        <h2 className="mt-4 text-lg sm:text-xl md:text-2xl font-medium text-[#2ec4b6] dark:text-[#2ec4b6] flex justify-center md:justify-start items-center h-8">
           <span className="mr-2">{text}</span>
           <Cursor cursorStyle="_" />
         </h2>
 
-        <p className="mt-3 max-w-xl text-lg sm:text-base italic text-white">
+        <p className="mt-3 max-w-xl text-lg text-black sm:text-base italic">
           “I'm a Frontend-focused MERN Stack Developer passionate about building
           fast, responsive, and scalable web applications. Skilled in React.js,
           Next.js, Express.js, and MongoDB, I create intuitive, user-centered
@@ -153,7 +153,7 @@ export default function HeroSection() {
         <a
           href="/Resume.pdf"
           download="Faisal_Ameen_Resume.pdf"
-          className="inline-flex items-center gap-2 px-5 py-2 mt-8 bg-[#f4623a] border border-[#f5572b] rounded-full text-sm sm:text-base text-white backdrop-blur-sm hover:bg-[#d64e28] transition-all duration-300"
+          className="inline-flex items-center gap-2 px-5 py-2 mt-8 bg-[#2ec4b6] border border-[#2ec4b6] rounded-full text-sm sm:text-base text-white backdrop-blur-sm hover:bg-[#38a69b] transition-all duration-300"
         >
           Download Resume <Download size={20} />
         </a>
@@ -167,12 +167,12 @@ export default function HeroSection() {
       >
         <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
           <motion.div
-            className="absolute inset-0 rounded-full border-2 border-[#f4623a]/50"
+            className="absolute inset-0 rounded-full border-2 border-[#2ec4b6]/50"
             animate={{ scale: [1, 1.05, 1], opacity: [0.5, 0.8, 0.5] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute inset-2 rounded-full border-2 border-[#f4623a]/40"
+            className="absolute inset-2 rounded-full border-2 border-[#2ec4b6]/40"
             animate={{ scale: [1, 1.05, 1], opacity: [0.4, 0.7, 0.4] }}
             transition={{
               duration: 2,
@@ -182,7 +182,7 @@ export default function HeroSection() {
             }}
           />
           <motion.img
-            src="/myprofile.png"
+            src="/Profile-img.png"
             alt="Faisal Ameen"
             className="w-full h-full object-cover rounded-full p-2"
             whileHover={{ scale: 1.05 }}

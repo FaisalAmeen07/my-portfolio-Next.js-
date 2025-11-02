@@ -54,26 +54,26 @@ export default function Education() {
         className="text-center"
       >
         <div className="flex items-center justify-center gap-4">
-          <div className="w-[2px] h-12 bg-[#f4623a]"></div>
+          <div className="w-[2px] h-12 bg-[#2ec4b6]"></div>
 
           <h2
             id="education-title"
-            className="text-4xl lg:text-5xl font-bold text-center"
+            className="text-4xl lg:text-5xl text-[#37373e] font-bold text-center"
           >
-            Educational <span className="text-[#f4623a]"> Journey</span>
+            Educational <span className="text-[#2ec4b6]"> Journey</span>
           </h2>
 
-          <div className="w-[2px] h-12 bg-[#f4623a]"></div>
+          <div className="w-[2px] h-12 bg-[#2ec4b6]"></div>
         </div>
 
-        <p className="text-sm max-w-3xl mx-auto leading-relaxed my-6">
+        <p className="text-sm max-w-3xl mx-auto text-[#37373e] leading-relaxed my-6">
           My academic path has provided a strong foundation in both technical
           and analytical skills.
         </p>
       </motion.header>
 
       <motion.div
-        className="flex flex-col md:flex-row gap-10"
+        className="flex flex-col md:flex-row gap-10 "
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -85,24 +85,24 @@ export default function Education() {
             className="relative w-full pl-12"
             variants={itemVariants}
           >
-            <div className="absolute left-4 top-0 h-full w-0.5 bg-[#f4623a]"></div>
+            <div className="absolute left-4 top-0 h-full w-0.5 bg-[#2ec4b6]"></div>
 
-            <div className="absolute left-4 top-0 -translate-x-1/2 flex items-center justify-center w-8 h-8 bg-gradient-to-br from-[#ed6944] to-[#ec5a32] rounded-full ring-8 ring-gray-900 z-10">
+            <div className="absolute left-4 top-0 -translate-x-1/2 flex items-center justify-center w-8 h-8 bg-gradient-to-br from-[#249186] to-[#2ec4b6] rounded-full ring-8 ring-[#dfe3e3] z-10">
               <GraduationCap className="text-white text-base" />
             </div>
 
-            <div className="h-full p-6 bg-gray-900/40 backdrop-blur-md rounded-xl shadow-lg border border-[#f59276] transition-all duration-300 ease-in-out hover:shadow-amber-700/20 hover:border-[#f84818] hover:scale-[1.02]">
-              <span className="text-sm font-semibold text-white bg-[#d85c3a] py-1 px-3 rounded-full inline-block">
+            <div className="h-full p-6 rounded-xl bg-white shadow-lg transition-all duration-300 ease-in-out hover:shadow-[#2ec4b6]/20 hover:scale-[1.02]">
+              <span className="text-sm font-semibold text-white bg-[#2ec4b6] py-1 px-3 rounded-full inline-block">
                 {edu.session}
               </span>
 
-              <h3 className="text-xl font-bold text-slate-100 mt-3">
+              <h3 className="text-xl font-bold text-[#37373e] mt-3">
                 {edu.title}
               </h3>
-              <p className="text-md text-slate-300 mt-1">{edu.institution}</p>
+              <p className="text-md text-[#2ec4b6] mt-1">{edu.institution}</p>
 
               {edu.description && (
-                <p className="text-slate-400 mt-4 text-sm">{edu.description}</p>
+                <p className="text-[#2e2e34] mt-4 text-sm">{edu.description}</p>
               )}
             </div>
           </motion.div>

@@ -26,7 +26,7 @@ const FormField = ({
     />
     <label
       htmlFor={name}
-      className="absolute text-[#f4623a] duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7 peer-focus:bg-[#f4623a] peer-focus:text-white
+      className="absolute text-[#2ec4b6] bg-white duration-300 transform -translate-y-6 scale-75 top-3 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-6 peer-focus:bg-[#2ec4b6] peer-focus:text-white
       peer-focus:px-2 peer-focus:rounded-md"
     >
       {label}
@@ -98,27 +98,27 @@ export default function Contact() {
 
       <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-start">
         <motion.div
-          className="p-8 rounded-3xl space-y-6 bg-gray-900/35 border border-[#f38d70]"
+          className="p-8 rounded-3xl space-y-6 shadow-xl bg-white"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-[#2ec4b6]">
             Get in Touch
           </h2>
-          <p className="text-lg text-slate-300">
+          <p className="text-lg text-[#37373e]">
             Feel free to reach out via the form or directly through my contact
             details.
           </p>
 
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <Mail className="w-6 h-6 text-[#f98463]" />
-              <span className="text-slate-200">odeveloper56@gmail.com</span>
+              <Mail className="w-6 h-6 text-[#2ec4b6]" />
+              <span className="text-[#37373e]">odeveloper56@gmail.com</span>
             </div>
             <div className="flex items-center space-x-3">
-              <Phone className="w-6 h-6 text-[#f98463]" />
-              <span className="text-slate-200">+92 3062672226</span>
+              <Phone className="w-6 h-6 text-[#2ec4b6]" />
+              <span className="text-[#37373e]">+92 3062672226</span>
             </div>
             <div className="flex space-x-4 mt-6">
               <a
@@ -126,35 +126,35 @@ export default function Contact() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Facebook className="w-7 h-7 text-[#f98463] hover:text-violet-300" />
+                <Facebook className="w-7 h-7 text-[#2ec4b6] hover:text-[#1d8e83]" />
               </a>
               <a
                 href="https://www.linkedin.com/in/faisal-ameen07/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Linkedin className="w-7 h-7 text-[#f98463] hover:text-violet-300" />
+                <Linkedin className="w-7 h-7 text-[#2ec4b6] hover:text-[#1d8e83]" />
               </a>
               <a
                 href="https://github.com/FaisalAmeen07/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Github className="w-7 h-7 text-[#f98463] hover:text-violet-300" />
+                <Github className="w-7 h-7 text-[#2ec4b6] hover:text-[#1d8e83]" />
               </a>
             </div>
           </div>
         </motion.div>
 
         <motion.div
-          className="p-8 rounded-3xl bg-gray-900/35  border border-[#f38d70]"
+          className="p-8 rounded-3xl shadow-xl bg-white"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="border rounded-2xl border-[#f38d70]">
+              <div className="rounded-2xl text-[#37373e] border border-[#2ec4b6]">
                 <FormField
                   name="name"
                   label="Your Name"
@@ -164,7 +164,7 @@ export default function Contact() {
                   required
                 />
               </div>
-              <div className="border rounded-2xl border-[#f38d70]">
+              <div className="rounded-2xl text-[#37373e] border border-[#2ec4b6]">
                 <FormField
                   name="email"
                   label="Your Email"
@@ -185,18 +185,18 @@ export default function Contact() {
                 required
                 rows={6}
                 placeholder="Write your valuable message here..."
-                className="block w-full px-4 py-3 text-white rounded-xl appearance-none peer focus:outline-none focus:ring-0 resize-none shadow-inner border border-[#f38d70] transition-shadow duration-300"
+                className="block w-full px-4 py-3 text-[#37373e] rounded-xl appearance-none peer focus:outline-none focus:ring-0 resize-none shadow-inner border border-[#2ec4b6] transition-shadow duration-300"
               ></textarea>
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-4 rounded-xl font-bold text-lg text-[#f38d70] border disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+              className="w-full py-4 rounded-xl font-bold text-lg text-[#2ec4b6] border disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
             >
               {loading ? (
                 <div className="flex items-center justify-center space-x-2">
-                  <div className="w-6 h-6 border-2 border-[#f38d70] border-t-transparent rounded-full animate-spin"></div>
+                  <div className="w-6 h-6 border-2 border-[#34e5d3] border-t-transparent rounded-full animate-spin"></div>
                   <span>Sending...</span>
                 </div>
               ) : (

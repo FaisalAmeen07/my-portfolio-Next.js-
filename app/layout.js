@@ -10,31 +10,22 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Faisal Amin",
+  title: "Faisal Amin Portfolio",
   description: "My portfolio",
+   icons: {
+    icon: '/logo.svg',
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+       <head>
+        <link rel="icon" href="/logo.svg" sizes={25} />
+      </head>
       <body
-        className={`${inter.className} w-full relative bg-black text-white overflow-x-hidden`}
+        className={`${inter.className} w-full relative overflow-x-hidden bg-[#faf9fb]`}
       >
-        <div
-          className="absolute inset-0 z-0 pointer-events-none"
-          style={{
-            backgroundImage: `
-              repeating-linear-gradient(0deg, transparent, transparent 5px,  rgba(244, 98, 58, 0.15) 5px,
-  rgba(244, 98, 58, 0.15) 6px, transparent 6px, transparent 15px),
-              repeating-linear-gradient(90deg, transparent, transparent 5px,  rgba(244, 98, 58, 0.15) 5px,
-  rgba(244, 98, 58, 0.15) 6px, transparent 6px, transparent 15px),
-              repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(244, 98, 58, 0.15) 5px,
-  rgba(244, 98, 58, 0.15) 6px, transparent 11px, transparent 30px),
-              repeating-linear-gradient(90deg, transparent, transparent 10px,  rgba(244, 98, 58, 0.15) 5px, transparent 11px, transparent 30px)
-            `,
-          }}
-        />
-
         <Header />
         <main className="relative z-10 pt-20">{children}</main>
         <Footer />

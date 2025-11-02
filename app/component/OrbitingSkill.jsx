@@ -230,7 +230,8 @@ const OrbitingSkill = memo(({ config, angle, scale }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={`relative w-full h-full p-2 bg-gray-800/90 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer ${isHovered ? "scale-125 shadow-2xl" : "shadow-lg hover:shadow-xl"}`}
+        className={`relative w-full h-full p-2 bg-gray-950/60
+           backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer ${isHovered ? "scale-125 shadow-2xl" : "shadow-lg hover:shadow-xl"}`}
         style={{
           boxShadow: isHovered ? `0 0 30px ${iconComponents[iconType]?.color}40, 0 0 60px ${iconComponents[iconType]?.color}20` : undefined,
         }}
@@ -250,8 +251,8 @@ OrbitingSkill.displayName = "OrbitingSkill";
 const GlowingOrbitPath = memo(({ radius, glowColor = "cyan", animationDelay = 0 }) => {
     
     const glowColors = {
-        cyan: { primary: "rgba(244, 98, 58, 0.4)", secondary: "rgba(244, 98, 58, 0.2)", border: "rgba(244, 98, 58, 0.3)" },
-        purple: { primary: "rgba(244, 98, 98, 0.4)", secondary: "rgb(234, 98, 40, 0.4)", border: "rgba(244, 98, 98, 0.4)" },
+        cyan: { primary: "rgba(46, 196, 182, 1)", secondary: "rgba(46, 196, 182, 0.8)", border: "rgba(46, 196, 182, 0.7)" },
+        purple: { primary: "rgba(72, 202, 228, 0.5)", secondary: "rgba(72, 202, 228, 0.5)", border: "rgba(46, 196, 182, 1)" },
     };
     const colors = glowColors[glowColor] || glowColors.cyan;
     return (
@@ -317,7 +318,7 @@ export default function OrbitingSkills() {
         ))}
         
         <div 
-          className="absolute bg-gray-900/40 backdrop-blur-lg rounded-full flex items-center justify-center text-lg font-bold border-2 border-[#f4623a]/30 shadow-[0_0_40px_rgba(6,182,212,0.3)] z-10"
+          className="absolute bg-gray-900/40 backdrop-blur-lg rounded-full flex items-center justify-center text-lg font-bold border-2 border-[#2ec4b6]/30 shadow-[0_0_40px_rgba(6,182,212,0.9)] z-10"
           style={{ width: `${128 * scale}px`, height: `${128 * scale}px`}}
         >
           <Code className="text-white" style={{width: `${centerIconSize}px`, height: `${centerIconSize}px`}}/>
