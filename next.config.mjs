@@ -1,5 +1,7 @@
 const nextConfig = {
-  devIndicators: false,
+  images: {
+    unoptimized: false
+  }
 }
 
-export default nextConfig; // ✅ Ye sahi hai
+export default nextConfig;

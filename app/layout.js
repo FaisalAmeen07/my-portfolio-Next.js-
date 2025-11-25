@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./component/Header.jsx";
 import Footer from "./component/Footer";
+import { ThemeProvider } from "./component/ThemeContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,9 +27,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className} w-full relative overflow-x-hidden bg-[#faf9fb]`}
       >
+         <ThemeProvider>
         <Header />
         <main className="relative z-10 pt-20">{children}</main>
         <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

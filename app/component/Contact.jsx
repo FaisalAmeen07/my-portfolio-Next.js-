@@ -26,8 +26,12 @@ const FormField = ({
     />
     <label
       htmlFor={name}
-      className="absolute text-[#2ec4b6] bg-white duration-300 transform -translate-y-6 scale-75 top-3 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-6 peer-focus:bg-[#2ec4b6] peer-focus:text-white
+      className="absolute text-[#2ec4b6] duration-300 transform -translate-y-6 scale-75 top-3 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-6 peer-focus:bg-[#2ec4b6] peer-focus:text-white
       peer-focus:px-2 peer-focus:rounded-md"
+       style={{
+              backgroundColor: "var(--skills-bg)", 
+              color: "var(--text-color)",
+            }}
     >
       {label}
     </label>
@@ -76,7 +80,7 @@ export default function Contact() {
       });
   };
 
-  return (
+ return (
     <section
       id="contact"
       className="container mx-auto px-4 lg:px-20 mt-20 relative overflow-hidden"
@@ -98,7 +102,11 @@ export default function Contact() {
 
       <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-start">
         <motion.div
-          className="p-8 rounded-3xl space-y-6 shadow-xl bg-white"
+          className="p-8 rounded-3xl space-y-6 shadow-xl"
+           style={{
+              backgroundColor: "var(--skills-bg)", 
+              color: "var(--text-color)",
+            }}
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
@@ -106,7 +114,7 @@ export default function Contact() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-[#2ec4b6]">
             Get in Touch
           </h2>
-          <p className="text-lg text-[#37373e]">
+          <p className="text-lg" style={{ color: "var(--text-color)" }}>
             Feel free to reach out via the form or directly through my contact
             details.
           </p>
@@ -114,11 +122,11 @@ export default function Contact() {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <Mail className="w-6 h-6 text-[#2ec4b6]" />
-              <span className="text-[#37373e]">odeveloper56@gmail.com</span>
+              <span style={{ color: "var(--text-color)" }}>odeveloper56@gmail.com</span>
             </div>
             <div className="flex items-center space-x-3">
               <Phone className="w-6 h-6 text-[#2ec4b6]" />
-              <span className="text-[#37373e]">+92 3062672226</span>
+              <span style={{ color: "var(--text-color)" }}>+92 3062672226</span>
             </div>
             <div className="flex space-x-4 mt-6">
               <a
@@ -147,14 +155,18 @@ export default function Contact() {
         </motion.div>
 
         <motion.div
-          className="p-8 rounded-3xl shadow-xl bg-white"
+          className="p-8 rounded-3xl shadow-xl"
+           style={{
+              backgroundColor: "var(--skills-bg)", 
+              color: "var(--text-color)",
+            }}
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="rounded-2xl text-[#37373e] border border-[#2ec4b6]">
+              <div className="rounded-2xl border border-[#2ec4b6]" style={{ color: "var(--text-color)" }}>
                 <FormField
                   name="name"
                   label="Your Name"
@@ -164,7 +176,7 @@ export default function Contact() {
                   required
                 />
               </div>
-              <div className="rounded-2xl text-[#37373e] border border-[#2ec4b6]">
+              <div className="rounded-2xl border border-[#2ec4b6]" style={{ color: "var(--text-color)" }}>
                 <FormField
                   name="email"
                   label="Your Email"
@@ -185,7 +197,8 @@ export default function Contact() {
                 required
                 rows={6}
                 placeholder="Write your valuable message here..."
-                className="block w-full px-4 py-3 text-[#37373e] rounded-xl appearance-none peer focus:outline-none focus:ring-0 resize-none shadow-inner border border-[#2ec4b6] transition-shadow duration-300"
+                className="block w-full px-4 py-3 rounded-xl appearance-none peer focus:outline-none focus:ring-0 resize-none shadow-inner border border-[#2ec4b6] transition-shadow duration-300"
+                style={{ color: "var(--text-color)" }}
               ></textarea>
             </div>
 

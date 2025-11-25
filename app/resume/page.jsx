@@ -30,7 +30,8 @@ const projects = [
 ];
 
 const SectionHeader = ({ children }) => (
-  <h2 className="text-2xl font-bold text-[#37373e] border-b-2 border-[#2ec4b6] pb-2 mb-6">
+  <h2 className="text-2xl font-bold border-b-2 border-[#2ec4b6] pb-2 mb-6" 
+    style={{ color: "var(--text-color)" }}>
     {children}
   </h2>
 );
@@ -49,7 +50,8 @@ export default function ResumePage() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl p-6 sm:p-8 border border-[#2ec4b6]/20 relative"
+        className="max-w-4xl mx-auto rounded-2xl shadow-2xl p-6 sm:p-8 border border-[#2ec4b6]/20 relative"
+        style={{ backgroundColor: "var(--skills-bg)" }}
       >
         {/* Download Button - Now positioned outside the main content flow */}
         <div className="flex justify-end mb-6 sm:mb-0 sm:absolute sm:top-6 sm:right-6">
@@ -64,7 +66,8 @@ export default function ResumePage() {
 
         {/* Header Section */}
         <div className="border-b border-[#2ec4b6]/30 pb-8 mb-8 text-center sm:pt-0 pt-4">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#37373e] tracking-wider mb-2">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-wider mb-2"
+            >
             FAISAL AMIN
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-[#2ec4b6] to-[#1a8a7d] mx-auto mb-4 rounded-full"></div>
@@ -73,16 +76,16 @@ export default function ResumePage() {
           </p>
 
           {/* Contact Info */}
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-6 mt-6 text-sm text-[#37373e]">
-            <div className="flex items-center gap-2 bg-gray-50 px-3 py-2 rounded-lg w-full sm:w-auto justify-center">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-6 mt-6 text-sm" style={{ color: "var(--text-color)" }}>
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg w-full sm:w-auto justify-center" style={{ backgroundColor: "var(--bg-color)" }}>
               <Mail size={16} className="text-[#2ec4b6]" /> 
               <span>odeveloper56@gmail.com</span>
             </div>
-            <div className="flex items-center gap-2 bg-gray-50 px-3 py-2 rounded-lg w-full sm:w-auto justify-center">
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg w-full sm:w-auto justify-center" style={{ backgroundColor: "var(--bg-color)" }}>
               <Phone size={16} className="text-[#2ec4b6]" /> 
               <span>(+92) 3062672226</span>
             </div>
-            <div className="flex items-center gap-2 bg-gray-50 px-3 py-2 rounded-lg w-full sm:w-auto justify-center">
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg w-full sm:w-auto justify-center" style={{ backgroundColor: "var(--bg-color)" }}>
               <MapPin size={16} className="text-[#2ec4b6]" /> 
               <span>Lahore, Ali Town</span>
             </div>
@@ -95,6 +98,7 @@ export default function ResumePage() {
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-50 p-3 rounded-full text-[#37373e] hover:bg-[#2ec4b6] hover:text-white transition-all duration-300 hover:scale-110 shadow-md"
+              
             >
               <Linkedin size={20} />
             </a>
@@ -122,7 +126,8 @@ export default function ResumePage() {
           {/* About Section */}
           <div>
             <SectionHeader>About Me</SectionHeader>
-            <p className="text-[#37373e] leading-relaxed">
+            <p className="leading-relaxed"
+            style={{ color: "var(--text-color)" }}>
               My name is Faisal Ameen. I recently graduated with a Bachelor's
               degree in Software Engineering. I have a strong interest in
               technology and communication, and I'm eager to start my career in a
@@ -133,7 +138,7 @@ export default function ResumePage() {
           {/* Skills Section */}
           <div>
             <SectionHeader>Technical Skills</SectionHeader>
-            <div className="grid grid-cols-2 gap-3 text-[#37373e]">
+            <div className="grid grid-cols-2 gap-3" style={{ color: "var(--text-color)" }}>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-[#2ec4b6] rounded-full"></div>
                 <span>HTML5</span>
@@ -181,8 +186,8 @@ export default function ResumePage() {
         {/* Work Experience */}
         <div className="mb-8">
           <SectionHeader>Work Experience</SectionHeader>
-          <div className="bg-gradient-to-r from-gray-50 to-white p-6 rounded-xl border border-[#2ec4b6]/20">
-            <p className="text-[#37373e] leading-relaxed">
+          <div className="p-6 rounded-xl border border-[#2ec4b6]/20" style={{ backgroundColor: "var(--bg-color)" }}>
+            <p className="leading-relaxed" style={{ color: "var(--text-color)" }}>
               Completed a 6-month Web Designing course from{" "}
               <span className="font-semibold text-[#2ec4b6]">Code Labe & IT Solution</span>, where
               I learned and practiced complete Frontend Development. Worked with
@@ -196,19 +201,19 @@ export default function ResumePage() {
         <div className="mb-8">
           <SectionHeader>Education</SectionHeader>
           <div className="space-y-4">
-            <div className="bg-gradient-to-r from-gray-50 to-white p-5 rounded-xl border border-[#2ec4b6]/20 hover:shadow-md transition-all duration-300">
-              <h3 className="font-semibold text-[#37373e] text-lg">
+            <div className="p-5 rounded-xl border border-[#2ec4b6]/20 hover:shadow-md transition-all duration-300" style={{ backgroundColor: "var(--bg-color)" }}>
+              <h3 className="font-semibold text-lg" style={{ color: "var(--text-color)" }}>
                 The Islamia University of Bahawalpur (2021 - 2025)
               </h3>
               <p className="text-[#2ec4b6] font-medium">Bachelor of Software Engineering</p>
-              <p className="text-[#37373e]">CGPA: 3.68/4.00</p>
+              <p style={{ color: "var(--text-color)" }}>CGPA: 3.68/4.00</p>
             </div>
-            <div className="bg-gradient-to-r from-gray-50 to-white p-5 rounded-xl border border-[#2ec4b6]/20 hover:shadow-md transition-all duration-300">
-              <h3 className="font-semibold text-[#37373e] text-lg">
+            <div className="p-5 rounded-xl border border-[#2ec4b6]/20 hover:shadow-md transition-all duration-300" style={{ backgroundColor: "var(--bg-color)" }}>
+              <h3 className="font-semibold text-lg" style={{ color: "var(--text-color)" }}>
                 Scholars Inn Boys H.S.S, JPP (2020 - 2021)
               </h3>
               <p className="text-[#2ec4b6] font-medium">FSC Pre Engineering</p>
-              <p className="text-[#37373e]">Marks: 1024/1100</p>
+              <p style={{ color: "var(--text-color)" }}>Marks: 1024/1100</p>
             </div>
           </div>
         </div>
@@ -220,12 +225,14 @@ export default function ResumePage() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-r from-gray-50 to-white border border-[#2ec4b6]/20 rounded-xl p-6 hover:shadow-lg transition-all duration-300 group"
+                className="border-[#2ec4b6]/20 rounded-xl p-6 hover:shadow-lg transition-all duration-300 group"
+                style={{ backgroundColor: "var(--bg-color)" }}
               >
-                <h3 className="text-xl font-semibold text-[#37373e] mb-3 group-hover:text-[#2ec4b6] transition-colors duration-300">
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-[#2ec4b6] transition-colors duration-300" 
+                style={{ backgroundColor: "var(--bg-color)" }}>
                   {project.title}
                 </h3>
-                <p className="text-[#37373e] mb-4 leading-relaxed">
+                <p className="mb-4 leading-relaxed" style={{ color: "var(--text-color)" }}>
                   {project.description}
                 </p>
 
@@ -256,7 +263,7 @@ export default function ResumePage() {
 
         {/* Footer Links */}
         <div className="border-t border-[#2ec4b6]/30 pt-6 mt-8 text-center">
-          <p className="text-sm text-[#37373e]">
+          <p className="text-sm" style={{ color: "var(--text-color)" }}>
             © {new Date().getFullYear()} Faisal Amin | Built with Next.js & Tailwind CSS
           </p>
           <p className="text-xs text-[#2ec4b6] mt-2">

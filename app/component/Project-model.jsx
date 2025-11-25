@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Globe, X } from "lucide-react";
+import Image from "next/image";
 
 export default function ProjectModal({ project, onClose }) {
   if (!project) return null;
@@ -14,7 +15,8 @@ export default function ProjectModal({ project, onClose }) {
       exit={{ opacity: 0 }}
     >
       <motion.div
-        className="bg-white rounded-xl max-w-5xl w-full p-6 relative shadow-2xl border border-[#2ec4b6]/20"
+        className="rounded-xl max-w-5xl w-full p-6 relative shadow-2xl border border-[#2ec4b6]/20"
+        style={{ backgroundColor: "var(--bg-color)" }}
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
@@ -29,25 +31,37 @@ export default function ProjectModal({ project, onClose }) {
         </button>
 
         {/* Header */}
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#37373e]">{project.projectName}</h1>
+        <h1
+          className="text-3xl sm:text-4xl font-bold"
+          style={{ color: "var(--text-color)" }}
+        >
+          {project.projectName}
+        </h1>
         <p className="text-[#2ec4b6] italic font-medium">{project.slogan}</p>
 
         {/* Image */}
-        <img
+        <Image
+          width={800}
+          height={450}
           src={project.projectImage}
           alt={project.projectName}
           className="w-full rounded-xl mt-4 mb-4 object-cover border border-[#2ec4b6]/20"
         />
 
         {/* Overview */}
-        <p className="text-[#37373e] whitespace-pre-wrap leading-relaxed">{project.description}</p>
+        <p
+          className="whitespace-pre-wrap leading-relaxed"
+          style={{ color: "var(--text-color)" }}
+        >
+          {project.description}
+        </p>
 
         {/* Features */}
         <div className="mt-6">
           <h2 className="text-[#2ec4b6] font-semibold text-lg mb-3 border-b border-[#2ec4b6]/30 pb-2">
             Key Features
           </h2>
-          <ul className="space-y-2 text-[#37373e]">
+          <ul className="space-y-2" style={{ color: "var(--text-color)" }}>
             {project.features?.map((f, i) => (
               <li key={i} className="flex items-start gap-2">
                 <div className="w-2 h-2 bg-[#2ec4b6] rounded-full mt-2 flex-shrink-0"></div>
@@ -83,7 +97,7 @@ export default function ProjectModal({ project, onClose }) {
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#2ec4b6] text-white hover:bg-[#1a8a7d] transition-all duration-300 hover:scale-105 shadow-lg font-medium"
             >
-              <Globe size={18} /> 
+              <Globe size={18} />
               <span>Live Site</span>
             </a>
           )}
@@ -94,7 +108,7 @@ export default function ProjectModal({ project, onClose }) {
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-[#2ec4b6] to-[#1a8a7d] text-white hover:from-[#1a8a7d] hover:to-[#2ec4b6] transition-all duration-300 hover:scale-105 shadow-lg font-medium"
             >
-              <ExternalLink size={18} /> 
+              <ExternalLink size={18} />
               <span>Client Code</span>
             </a>
           )}

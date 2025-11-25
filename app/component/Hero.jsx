@@ -3,8 +3,10 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Download, Github, Linkedin, Facebook } from "lucide-react";
+import Image from "next/image";
+import { useTheme } from "./ThemeContext";
 
-// socila icon
+// Social Icon Component
 const SocialIcon = () => {
   const socialLinks = [
     {
@@ -33,7 +35,8 @@ const SocialIcon = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={link.label}
-          className="text-black hover:text-[#2ec4b6] transition-colors duration-300"
+          className="dark:text-white hover:!text-[#2ec4b6] transition-colors duration-300"
+          style={{ color: "var(--text-color)" }}
         >
           {link.icon}
         </a>
@@ -42,7 +45,7 @@ const SocialIcon = () => {
   );
 };
 
-// Custom hook to replicate the typewriter effect
+// Typewriter Hook
 const useTypewriter = ({
   words,
   loop = true,
@@ -91,12 +94,12 @@ const useTypewriter = ({
   return [text];
 };
 
-// Simple blinking cursor component
+// Cursor Component
 const Cursor = ({ cursorStyle = "_" }) => {
-  return <span className="animate-ping">{cursorStyle}</span>;
+  return <span className="animate-ping dark:text-white">{cursorStyle}</span>;
 };
 
-// The main Hero Section component
+// Hero Section
 export default function HeroSection() {
   const [text] = useTypewriter({
     words: [
@@ -110,6 +113,7 @@ export default function HeroSection() {
     typeSpeed: 80,
     deleteSpeed: 50,
   });
+  const MotionImage = motion(Image);
 
   return (
     <section className="container mx-auto flex flex-col-reverse md:flex-row items-center md:items-start gap-8 lg:gap-20 px-4 lg:px-20 mt-16">
@@ -125,7 +129,10 @@ export default function HeroSection() {
           Welcome to my world of code and creativity.
         </div>
 
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-black">
+        <h1
+          className="text-xl sm:text-2xl md:text-3xl font-semibold dark:text-white"
+          style={{ color: "var(--text-color)" }}
+        >
           Hi, I am
         </h1>
 
@@ -138,22 +145,26 @@ export default function HeroSection() {
           <Cursor cursorStyle="_" />
         </h2>
 
-        <p className="mt-3 max-w-xl text-lg text-black sm:text-base italic">
+        <p
+          className="mt-3 max-w-xl text-lg sm:text-base italic dark:text-white"
+          style={{ color: "var(--text-color)" }}
+        >
           “I'm a Frontend-focused MERN Stack Developer passionate about building
           fast, responsive, and scalable web applications. Skilled in React.js,
           Next.js, Express.js, and MongoDB, I create intuitive, user-centered
-          interfaces using Tailwind CSS,and Bootstrap. In addition,
-          I build dynamic and visually engaging WordPress websites with
-          Elementor, blending modern design with clean, efficient code.
-         ”
+          interfaces using Tailwind CSS,and Bootstrap. In addition, I build
+          dynamic and visually engaging WordPress websites with Elementor,
+          blending modern design with clean, efficient code.”
         </p>
+
         <div className="mt-6">
           <SocialIcon />
         </div>
+
         <a
           href="/Resume.pdf"
           download="Faisal_Ameen_Resume.pdf"
-          className="inline-flex items-center gap-2 px-5 py-2 mt-8 bg-[#2ec4b6] border border-[#2ec4b6] rounded-full text-sm sm:text-base text-white backdrop-blur-sm hover:bg-[#38a69b] transition-all duration-300"
+          className="inline-flex items-center gap-2 px-5 py-2 mt-8 bg-[#2ec4b6] border border-[#2ec4b6] rounded-full text-sm sm:text-base text-white backdrop-blur-sm hover:bg-[#38a69b] dark:hover:bg-[#2ec4b6]/80 transition-all duration-300"
         >
           Download Resume <Download size={20} />
         </a>
@@ -181,12 +192,15 @@ export default function HeroSection() {
               delay: 0.5,
             }}
           />
-          <motion.img
+          <MotionImage
             src="/Profile-img.png"
             alt="Faisal Ameen"
+            width={300}
+            height={300}
             className="w-full h-full object-cover rounded-full p-2"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
+            priority
           />
         </div>
       </motion.div>

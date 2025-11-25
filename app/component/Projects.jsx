@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, FileCode2 } from "lucide-react";
 import ProjectModal from "../component/Project-model.jsx";
-
+import Image from "next/image";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
@@ -27,7 +27,10 @@ export default function Projects() {
       <header className="text-center mb-16">
         <div className="flex items-center justify-center gap-4">
           <div className="w-[2px] h-12 bg-[#2ec4b6]"></div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-center text-[#242f30]">
+          <h2
+            className="text-4xl lg:text-5xl font-bold text-center"
+            style={{ color: "var(--text-color)" }}
+          >
             My Digital <span className="text-[#2ec4b6]">Creations</span>
           </h2>
           <div className="w-[2px] h-12 bg-[#2ec4b6]"></div>
@@ -38,14 +41,15 @@ export default function Projects() {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="my-4 text-sm text-[#37373e] max-w-2xl mx-auto"
+          className="my-4 text-sm max-w-2xl mx-auto"
+          style={{ color: "var(--text-color)" }}
         >
-          A selection of projects where I've turned complex problems into elegant, user-friendly solutions.
+          A selection of projects where I've turned complex problems into
+          elegant, user-friendly solutions.
         </motion.p>
       </header>
-      <br/>
+      <br />
 
-  
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-24">
         {projects.map((project, index) => (
           <motion.article
@@ -57,15 +61,24 @@ export default function Projects() {
             className="group relative"
             aria-labelledby={`project-title-${project._id}`}
           >
-            <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-10/12 z-20 transition-all duration-500 ease-in-out group-hover:-translate-y-2 group-hover:scale-105 ">
-              <img
+            <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-10/12 z-20 transition-all duration-500 ease-in-out group-hover:-translate-y-2 group-hover:scale-105">
+              <Image
                 src={project.projectImage}
                 alt={`Screenshot of ${project.projectName}`}
+                width={800}
+                height={450}
                 className="aspect-video w-full object-fill rounded-lg shadow-xl border-2 border-[#0ab9a7]"
+                transition={{ type: "spring", stiffness: 250 }}
               />
             </div>
 
-            <div className="relative z-10 bg-white rounded-2xl shadow-xl transition-all duration-300 group-hover:shadow pt-28 p-6 text-center">
+            <div
+              className="relative z-10 rounded-2xl shadow-xl transition-all duration-300 group-hover:shadow pt-28 p-6 text-center"
+              style={{
+                backgroundColor: "var(--skills-bg)",
+                color: "var(--text-color)",
+              }}
+            >
               <h3
                 id={`project-title-${project._id}`}
                 className="text-2xl font-bold tracking-tight text-[#2ec4b6] bg-clip-text  inline-block relative
@@ -75,7 +88,7 @@ export default function Projects() {
                 {project.projectName}
               </h3>
 
-              <p className="mt-2 text-sm text-[#37373e] leading-relaxed">{project.slogan}</p>
+              <p className="mt-2 text-sm leading-relaxed">{project.slogan}</p>
 
               <div className="flex justify-center gap-4 mt-6 pt-5 border-t border-[#2ec4b6]">
                 <a

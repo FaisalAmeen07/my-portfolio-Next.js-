@@ -58,7 +58,7 @@ export default function Education() {
 
           <h2
             id="education-title"
-            className="text-4xl lg:text-5xl text-[#37373e] font-bold text-center"
+           className="text-4xl lg:text-5xl font-bold text-center" style={{ color: "var(--text-color)" }}
           >
             Educational <span className="text-[#2ec4b6]"> Journey</span>
           </h2>
@@ -66,7 +66,7 @@ export default function Education() {
           <div className="w-[2px] h-12 bg-[#2ec4b6]"></div>
         </div>
 
-        <p className="text-sm max-w-3xl mx-auto text-[#37373e] leading-relaxed my-6">
+        <p className="text-sm max-w-3xl mx-auto leading-relaxed my-6" style={{ color: "var(--text-color)" }}>
           My academic path has provided a strong foundation in both technical
           and analytical skills.
         </p>
@@ -91,18 +91,21 @@ export default function Education() {
               <GraduationCap className="text-white text-base" />
             </div>
 
-            <div className="h-full p-6 rounded-xl bg-white shadow-lg transition-all duration-300 ease-in-out hover:shadow-[#2ec4b6]/20 hover:scale-[1.02]">
+            <div className="h-full p-6 rounded-xl shadow-lg transition-all duration-300 ease-in-out hover:shadow-[#2ec4b6]/20 hover:scale-[1.02]"  style={{
+              backgroundColor: "var(--skills-bg)", 
+              color: "var(--text-color)",
+            }}>
               <span className="text-sm font-semibold text-white bg-[#2ec4b6] py-1 px-3 rounded-full inline-block">
                 {edu.session}
               </span>
 
-              <h3 className="text-xl font-bold text-[#37373e] mt-3">
+              <h3 className="text-xl font-bold mt-3" style={{ color: "var(--text-color)" }}>
                 {edu.title}
               </h3>
               <p className="text-md text-[#2ec4b6] mt-1">{edu.institution}</p>
 
               {edu.description && (
-                <p className="text-[#2e2e34] mt-4 text-sm">{edu.description}</p>
+                <p className="mt-4 text-sm" style={{ color: "var(--text-color)" }}>{edu.description}</p>
               )}
             </div>
           </motion.div>

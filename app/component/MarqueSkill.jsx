@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import React from "react";
+
 const marqueeSkills1 = [
   { name: "React", icon: "logos:react", color: "#61DAFB" },
   { name: "Next.js", icon: "logos:nextjs-icon", color: "#FFFFFF" },
@@ -8,7 +9,6 @@ const marqueeSkills1 = [
   { name: "Tailwind CSS", icon: "logos:tailwindcss-icon", color: "#06B6D4" },
   { name: "MongoDB", icon: "logos:mongodb-icon", color: "#47A248" },
   { name: "WordPress", icon: "simple-icons:wordpress", color: "#21759B" },
-
   { name: "Node.js", icon: "logos:nodejs-icon", color: "#339933" },
 ];
 
@@ -30,6 +30,8 @@ const Marquee = ({ skills, direction = "forwards" }) => {
       style={{
         maskImage:
           "linear-gradient(to right, transparent, black 2rem, black calc(100% - 2rem), transparent)",
+        WebkitMaskImage:
+          "linear-gradient(to right, transparent, black 2rem, black calc(100% - 2rem), transparent)",
       }}
     >
       <div
@@ -39,14 +41,18 @@ const Marquee = ({ skills, direction = "forwards" }) => {
         {[...skills, ...skills].map((skill, index) => (
           <div
             key={index}
-            className="flex-shrink-0 flex flex-col items-center justify-center bg-white rounded-2xl text-white w-[120px] h-[120px] mx-2 transition-all duration-300 hover:scale-115 border-2 border-transparent"
+            className="flex-shrink-0 flex flex-col items-center justify-center rounded-2xl w-[120px] h-[120px] mx-2 transition-all duration-300 hover:scale-110 border-2 border-transparent"
+            style={{
+              backgroundColor: "var(--skills-bg)", 
+              color: "var(--text-color)",
+            }}
           >
             <Icon
               icon={skill.icon}
-              className="w-12 h-12 transition-transform duration-300 group-hover:scale-110"
-              style={{ color: skill.color }} // ✅ Correct way
+              className="w-12 h-12 transition-transform duration-300"
+              style={{ color: skill.color }}
             />
-            <span className="mt-2 text-xs text-[#242f30] group-hover:text-[#2ec4b6] transition-colors">
+            <span className="mt-2 text-xs transition-colors">
               {skill.name}
             </span>
           </div>
@@ -56,7 +62,7 @@ const Marquee = ({ skills, direction = "forwards" }) => {
   );
 };
 
-export default function MarqueSkill() {
+export default function MarqueeSkill() {
   return (
     <div className="w-full flex flex-col gap-y-6">
       <Marquee skills={marqueeSkills1} />

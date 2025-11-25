@@ -13,12 +13,15 @@ import {
   PhoneCall,
   X,
 } from "lucide-react";
+import { Sun, Moon } from "lucide-react";
 import { FaCode } from "react-icons/fa";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import { useRouter, usePathname } from "next/navigation";
+import { useTheme } from "./ThemeContext";
 
 const Header = () => {
+  const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const mobileMenuRef = useRef(null);
@@ -40,7 +43,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -51,13 +53,8 @@ const Header = () => {
       }
     };
 
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    if (isOpen) document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
 
   const menuItems = [
@@ -103,24 +100,28 @@ const Header = () => {
   const MobileMenuItem = ({ item }) => {
     const [isHovered, setIsHovered] = useState(false);
 
+    const hoverStyle = {
+      backgroundColor: isHovered ? "#2ec4b6" : "transparent",
+      color: isHovered ? "white" : "var(--text-color)",
+    };
+
     if (item.external) {
       return (
         <Link
           href={item.path}
           onClick={() => setIsOpen(false)}
-          className="flex w-full items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 cursor-pointer group"
-          style={{
-            backgroundColor: isHovered ? "#2ec4b6" : "transparent",
-            color: isHovered ? "white" : "black",
-          }}
+          className="flex w-full items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300"
+          style={hoverStyle}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <div className="transition-colors duration-300">{item.icon}</div>
-          <span className="font-medium">{item.name}</span>
+          {item.icon}
+          <span>{item.name}</span>
         </Link>
       );
-    } else if (pathname === "/") {
+    }
+
+    if (pathname === "/") {
       return (
         <ScrollLink
           to={item.path}
@@ -128,48 +129,42 @@ const Header = () => {
           duration={500}
           offset={-80}
           onClick={() => setIsOpen(false)}
-          className="flex w-full items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 cursor-pointer group"
-          style={{
-            backgroundColor: isHovered ? "#2ec4b6" : "transparent",
-            color: isHovered ? "white" : "black",
-          }}
+          className="flex w-full items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 cursor-pointer"
+          style={hoverStyle}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <div className="transition-colors duration-300">{item.icon}</div>
-          <span className="font-medium">{item.name}</span>
+          {item.icon}
+          <span>{item.name}</span>
         </ScrollLink>
       );
-    } else {
-      return (
-        <button
-          onClick={() => {
-            handleScrollOrNavigate(item.path);
-            setIsOpen(false);
-          }}
-          className="flex w-full items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 cursor-pointer text-left group"
-          style={{
-            backgroundColor: isHovered ? "#2ec4b6" : "transparent",
-            color: isHovered ? "white" : "black",
-          }}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <div className="transition-colors duration-300">{item.icon}</div>
-          <span className="font-medium">{item.name}</span>
-        </button>
-      );
     }
+
+    return (
+      <button
+        onClick={() => {
+          handleScrollOrNavigate(item.path);
+          setIsOpen(false);
+        }}
+        className="flex w-full items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-left"
+        style={hoverStyle}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {item.icon}
+        <span>{item.name}</span>
+      </button>
+    );
   };
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-6xl z-50 
-      transition-all duration-300 text-black
-      rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.08)] 
-      backdrop-blur-md ${
-        isScrolled ? "bg-white/60 border-[#2ec4b6]/50" : "bg-white"
-      }`}
+      className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 transition-all duration-300 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.08)] backdrop-blur-md border"
+      style={{
+        backgroundColor: isScrolled ? "var(--header-bg)" : "var(--bg-color)",
+        borderColor: "var(--header-border)",
+        color: "var(--text-color)",
+      }}
       ref={mobileMenuRef}
     >
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -181,16 +176,22 @@ const Header = () => {
             </span>
           </div>
           <div className="flex flex-col">
-            <span className="font-bold text-gray-800 text-xl leading-5">
+            <span
+              className="font-bold text-xl leading-5"
+              style={{ color: "var(--text-color)" }}
+            >
               Faisal Amin
             </span>
-            <span className="text-gray-500 text-xs font-medium">
+            <span
+              className="text-xs font-medium"
+              style={{ color: "var(--text-color)" }}
+            >
               FrontEnd Developer
             </span>
           </div>
         </Link>
 
-        {/* Desktop menu */}
+        {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-6">
           <ul className="flex items-center gap-2">
             {menuItems.map((item) =>
@@ -198,7 +199,10 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.path}
-                  className="flex items-center gap-2 px-3 py-2 rounded-full text-sm hover:bg-[#2ec4b6] hover:text-white transition-colors duration-300"
+                  className="flex items-center gap-2 px-3 py-2 rounded-full text-sm cursor-pointer 
+                  hover:bg-[#2ec4b6] hover:!text-white transition-all duration-300 
+                  text-black dark:text-white"
+                  style={{ color: "var(--text-color)" }}
                 >
                   {item.icon}
                   {item.name}
@@ -210,7 +214,10 @@ const Header = () => {
                   smooth={true}
                   duration={500}
                   offset={-80}
-                  className="flex items-center gap-2 px-3 py-2 rounded-full text-sm hover:bg-[#2ec4b6] hover:text-white transition-colors duration-300 cursor-pointer"
+                  className="flex items-center gap-2 px-3 py-2 rounded-full text-sm cursor-pointer 
+                hover:bg-[#2ec4b6] hover:!text-white transition-all duration-300 
+                dark:text-white"
+                  style={{ color: "var(--text-color)" }}
                 >
                   {item.icon}
                   {item.name}
@@ -219,7 +226,10 @@ const Header = () => {
                 <button
                   key={item.name}
                   onClick={() => handleScrollOrNavigate(item.path)}
-                  className="flex items-center gap-2 px-3 py-2 rounded-full text-sm text-black hover:bg-[#2ec4b6] hover:text-white transition-colors duration-300 cursor-pointer"
+                  className="flex items-center gap-2 px-3 py-2 rounded-full border-amber-50 text-sm cursor-pointer 
+                  transition-all duration-300 
+                hover:bg-[#2ec4b6] hover:!text-white"
+                  style={{ color: "var(--text-color)" }}
                 >
                   {item.icon}
                   {item.name}
@@ -228,19 +238,29 @@ const Header = () => {
             )}
           </ul>
 
-          {/* Divider */}
-          <div className="h-6 w-px bg-black mx-4"></div>
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full bg-[#2ec4b6] text-white hover:bg-[#1a8a7d] transition-all duration-300"
+          >
+            {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+          </button>
 
-          {/* Social icons */}
+          {/* Divider */}
+          <div
+            className="h-6 w-px mx-4"
+            style={{ background: "var(--text-color)" }}
+          ></div>
+
+          {/* Social Icons */}
           <div className="flex items-center gap-3">
             {socialLinks.map((item) => (
               <motion.a
-                whileHover={{ scale: 1.2 }}
                 key={item.name}
                 href={item.path}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white bg-[#2ec4b6] p-1 rounded transition-colors duration-300"
+                className="bg-[#2ec4b6] p-1 rounded text-white hover:bg-[#1a8a7d]"
               >
                 {item.icon}
               </motion.a>
@@ -248,17 +268,16 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile menu button */}
+        {/* Mobile Menu Button */}
         <button
-          className="lg:hidden p-2 text-[#2ec4b6] focus:outline-none transition-colors duration-300 hover:bg-[#2ec4b6] hover:text-white rounded-lg"
+          className="lg:hidden p-2 text-[#2ec4b6] rounded-lg transition-all duration-300"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
         >
           {isOpen ? <X size={30} /> : <span className="text-2xl">☰</span>}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -266,7 +285,12 @@ const Header = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden overflow-hidden absolute w-full bg-white/95 backdrop-blur-md border-t border-[#2ec4b6] rounded-b-2xl shadow-xl"
+            className="lg:hidden overflow-hidden absolute w-full rounded-b-2xl shadow-xl backdrop-blur-md"
+            style={{
+              backgroundColor: "var(--header-bg)",
+              borderTop: `1px solid var(--header-border)`,
+              color: "var(--text-color)",
+            }}
           >
             <div className="px-4 py-4">
               <ul className="flex flex-col gap-1">
@@ -277,21 +301,28 @@ const Header = () => {
                 ))}
               </ul>
 
-              <div className="h-px bg-[#2ec4b6] my-4"></div>
+              <div className="h-px my-4 bg-[#2ec4b6]"></div>
 
               <div className="flex items-center justify-center gap-4 py-2">
                 {socialLinks.map((item) => (
                   <motion.a
-                    whileHover={{ scale: 1.2 }}
                     key={item.name}
                     href={item.path}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white bg-[#2ec4b6] p-1 rounded transition-colors duration-300"
+                    className="bg-[#2ec4b6] text-white p-1 rounded hover:bg-[#1a8a7d]"
                   >
                     {item.icon}
                   </motion.a>
                 ))}
+                <div className="flex justify-center py-3">
+                  <button
+                    onClick={toggleTheme}
+                    className="p-2 rounded bg-[#2ec4b6] text-white hover:bg-[#1a8a7d] transition-all duration-300"
+                  >
+                    {theme === "light" ? <Moon size={17} /> : <Sun size={17} />}
+                  </button>
+                </div>
               </div>
             </div>
           </motion.div>

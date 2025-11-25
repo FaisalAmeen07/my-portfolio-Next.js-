@@ -41,7 +41,11 @@ const services = [
     title: "Frontend Development",
     description:
       "Developing interactive and high-performance UIs using modern frontend frameworks.",
-    points: ["React.js & Next.js", "Tailwind CSS & JavaScript", "API Integration"],
+    points: [
+      "React.js & Next.js",
+      "Tailwind CSS & JavaScript",
+      "API Integration",
+    ],
     themeColor: "green",
   },
   {
@@ -146,13 +150,17 @@ export default function Services() {
             <div className="w-[2px] h-12 bg-[#2ec4b6]"></div>
             <h2
               id="services-title"
-              className="text-4xl lg:text-5xl font-bold text-center text-[#37373e]"
+              className="text-4xl lg:text-5xl font-bold text-center"
+              style={{ color: "var(--text-color)" }}
             >
               My Expert <span className="text-[#2ec4b6]"> Services</span>
             </h2>
             <div className="w-[2px] h-12 bg-[#2ec4b6]"></div>
           </div>
-          <p className="text-sm my-6 max-w-3xl mx-auto leading-relaxed text-[#37373e]">
+          <p
+            className="text-sm my-6 max-w-3xl mx-auto leading-relaxed"
+            style={{ color: "var(--text-color)" }}
+          >
             I provide a wide range of services to turn your ideas into reality.
             Here's how I can help you succeed.
           </p>
@@ -170,13 +178,25 @@ export default function Services() {
               <button
                 key={service.title}
                 onClick={() => setActiveIndex(index)}
-                className={`relative text-left w-full p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950 group ${
-                  activeIndex === index
-                    ? `bg-[#2ec4b6] text-white shadow-lg ${
-                        themeStyles[service.themeColor].border
-                      }`
-                    : "bg-white text-[#37373e] border border-gray-200 hover:bg-[#2ec4b6] hover:text-white"
-                }`}
+                className={`
+                relative text-left w-full p-4 rounded-xl transition-all duration-300 transform 
+                hover:-translate-y-1 focus:outline-none focus-visible:ring-2 
+                focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950 group
+
+    ${
+      activeIndex === index
+        ? `bg-[#2ec4b6] text-white  shadow-lg ${
+            themeStyles[service.themeColor].border
+          }`
+        : "hover:!bg-[#2ec4b6] hover:!text-white"
+    }
+  `}
+                style={{
+                  backgroundColor:
+                    activeIndex === index ? "#2ec4b6" : "var(--skills-bg)",
+                  color:
+                    activeIndex === index ? "#ffffff" : "var(--text-color)",
+                }}
               >
                 {activeIndex === index && (
                   <motion.div
@@ -186,12 +206,19 @@ export default function Services() {
                     }`}
                   />
                 )}
+
                 <span
-                  className={`text-xl font-semibold transition-colors duration-300 pl-4 ${
+                  className={`
+                  text-xl font-semibold transition-colors duration-300 pl-4
+                  ${
                     activeIndex === index
                       ? "text-white"
-                      : "text-[#37373e] group-hover:text-white"
-                  }`}
+                      : "group-hover:text-white"
+                  }
+                             `}
+                  style={{
+                    color: activeIndex === index ? "#fff" : "var(--text-color)",
+                  }}
                 >
                   {service.title}
                 </span>
@@ -207,17 +234,21 @@ export default function Services() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -30, scale: 0.95 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                className={`w-full p-8 rounded-2xl shadow-xl backdrop-blur-md ${activeTheme.bg}`}
+                className={`w-full p-8 rounded-2xl shadow-xl backdrop-blur-md`} 
+                 style={{
+              backgroundColor: "var(--skills-bg)", 
+              color: "var(--text-color)",
+            }}
               >
                 <div
-                  className={`mb-6 inline-block p-4 rounded-full shadow-md border border-white/10 ${activeTheme.gradientIcon}`}
+                  className={`mb-6 inline-block p-4 rounded-full shadow-md  text-white  ${activeTheme.gradientIcon}`}
                 >
                   {activeService.icon}
                 </div>
                 <h3 className="text-3xl font-extrabold mb-4 text-[#2ec4b6]">
                   {activeService.title}
                 </h3>
-                <p className="text-lg text-[#37373e] mb-8 leading-relaxed">
+                <p className="text-lg mb-8 leading-relaxed" style={{ color: "var(--text-color)" }}>
                   {activeService.description}
                 </p>
                 <ul className="space-y-4">
@@ -232,7 +263,7 @@ export default function Services() {
                       <CheckCircle2
                         className={`w-6 h-6 flex-shrink-0 ${activeTheme.text}`}
                       />
-                      <span className="text-lg text-[#37373e]">{point}</span>
+                      <span className="text-lg"  style={{ color: "var(--text-color)" }}>{point}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -253,7 +284,11 @@ export default function Services() {
             return (
               <motion.div
                 key={index}
-                className="group relative flex flex-col p-6 rounded-2xl bg-white backdrop-blur-sm shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/10 transform hover:-translate-y-2"
+                className="group relative flex flex-col p-6 rounded-2xl backdrop-blur-sm shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/10 transform hover:-translate-y-2"
+                 style={{
+              backgroundColor: "var(--skills-bg)", 
+              color: "var(--text-color)",
+            }}
                 variants={cardVariants}
               >
                 <div
@@ -264,7 +299,7 @@ export default function Services() {
                 <h3 className="text-2xl font-bold text-[#2ec4b6] mb-2">
                   {service.title}
                 </h3>
-                <p className="text-[#37373e] mb-6 flex-grow">
+                <p className="mb-6 flex-grow"  style={{ color: "var(--text-color)" }}>
                   {service.description}
                 </p>
                 <ul className="space-y-3">
@@ -273,7 +308,7 @@ export default function Services() {
                       <CheckCircle2
                         className={`w-5 h-5 flex-shrink-0 ${serviceTheme.text}`}
                       />
-                      <span className="text-[#37373e]">{point}</span>
+                      <span className=""  style={{ color: "var(--text-color)" }}>{point}</span>
                     </li>
                   ))}
                 </ul>

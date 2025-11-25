@@ -2,7 +2,7 @@
   {
     "_id": 1,
     "projectName": "Luxury Hotel",
-    "projectImage": "./Luxury-hotel.png",
+    "projectImage": "/Luxury-hotel.png",
     "slogan": "Luxury Hotel Site built with HTML, Bootstrap, and Javascript. The main focus is responsive on all devices.",
     "features": [
       "Fully Responsive Design",
@@ -28,7 +28,7 @@
   {
     "_id": 2,
     "projectName": "Currency Converter",
-    "projectImage": "./Currency.png",
+    "projectImage": "/Currency.png",
     "slogan": "Built a Currency Converter application using React.js and Fetch API to display live exchange rates for multiple countries.",
     "features": [
       "Real-time currency conversion",
@@ -45,7 +45,7 @@
   {
     "_id": 3,
     "projectName": "Ecommerce Website",
-    "projectImage": "./E-shop.png",
+    "projectImage": "/E-shop.png",
     "slogan": "A responsive and dynamic eCommerce experience powered by React.Js and usefull Statement Like ContextApi.",
     "features": [
       "Dynamic Product Data: Integrated with a third-party API to fetch and display live product listings.",
@@ -71,7 +71,7 @@
   {
     "_id": 4,
     "projectName": "Tic-Tac-Toy",
-    "projectImage": "./tic-tac-toy.png",
+    "projectImage": "/tic-tac-toy.png",
     "slogan": "Tic Tac Toy is a interactive browser-based game built using pure HTML, CSS, and JavaScript. It features smooth gameplay.",
     "features": [
       "Interactive Gameplay: Two-player mode with smooth turn-based interaction.",
@@ -90,7 +90,7 @@
   {
     "_id": 5,
     "projectName": "E-landing-page",
-    "projectImage": "./shop-commernce.jpg",
+    "projectImage": "/shop-commernce.jpg",
     "slogan": "The Simple Ecommerence page landingPage built using pure HTML, CSS, and MediaQuery.",
     "features": [
       "Interactive Landing Page: Simple UI , attractive =.",
@@ -106,7 +106,7 @@
   {
     "_id": 6,
     "projectName": "My Portfolio",
-    "projectImage": "./Portfollio.png",
+    "projectImage": "/Portfollio.png",
     "slogan": "Developed a modern and responsive personal portfolio website using Next.js. and Tailwind CSS.",
     "features": [
       "Next.js routing for fast and dynamic navigation",
