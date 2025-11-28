@@ -121,7 +121,7 @@
     "Framer Motion",
     "Email.js",
     "Lucide React Icons"],
-    "liveLink": "https://my-portfolio-next-js-silk.vercel.app",
+    "liveLink": "https://faisalameenportfolio.vercel.app/",
     "clientLink": "https://github.com/FaisalAmeen07/my-portfolio-Next.js-",
     "description": "Developed a modern and responsive personal portfolio website using Next.js and Tailwind CSS with smooth Framer Motion animations. Integrated Email.js for direct contact form submissions. The site showcases projects, skills, and experience with a clean, user-friendly design that adapts seamlessly across all devices."
   }
