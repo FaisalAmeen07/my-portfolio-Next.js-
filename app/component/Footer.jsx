@@ -32,7 +32,7 @@ const footerConfig = {
     { 
       label: 'Mail', 
       icon: Mail, 
-      href: 'mailto:odeveloper56@gmail.com' 
+      href: 'mailto:faysalameen31@gmail.com' 
     },
   ],
 };

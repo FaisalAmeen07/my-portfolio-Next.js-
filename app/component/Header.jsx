@@ -92,7 +92,7 @@ const Header = () => {
     },
     {
       name: "Email",
-      path: "mailto:odeveloper56@gmail.com",
+      path: "mailto:faysalameen31@gmail.com",
       icon: <Mail size={23} />,
     },
   ];

@@ -84,12 +84,16 @@ export default function Contact() {
       <div className="absolute inset-0 rounded-3xl -z-10" />
 
       <Toaster
-        position="bottom-center"
+        position="top-center"
+        containerStyle={{
+          top: 100,
+          zIndex: 9999,
+        }}
         toastOptions={{
           style: {
-            background: "#e5e7eb",
-            color: "#1f2937",
-            boxShadow: "5px 5px 10px #1e293b, -5px -5px 10px #334155",
+            background: "var(--skills-bg)",
+            color: "var(--text-color)",
+            boxShadow: "5px 5px 10px, #fff -5px -5px 10px #fff",
           },
         }}
       />
@@ -113,7 +117,7 @@ export default function Contact() {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <Mail className="w-6 h-6 text-[#2ec4b6]" />
-              <span>odeveloper56@gmail.com</span>
+              <span>faysalameen31@gmail.com</span>
             </div>
             <div className="flex items-center space-x-3">
               <Phone className="w-6 h-6 text-[#2ec4b6]" />
