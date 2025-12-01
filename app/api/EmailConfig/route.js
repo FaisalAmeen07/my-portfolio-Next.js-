@@ -11,16 +11,14 @@ export async function POST(req) {
       );
     }
 
-    // Nodemailer Transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.MAIL_USER,   // Your Gmail
-        pass: process.env.MAIL_PASS    // Your App Password
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS
       }
     });
 
-    // Send Mail
     await transporter.sendMail({
       from: `"Portfolio Message" <${process.env.MAIL_USER}>`,
       to: process.env.MAIL_USER,
@@ -31,11 +29,10 @@ export async function POST(req) {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
-      `
+      `,
     });
 
     return Response.json({ success: true, msg: "Email sent successfully!" });
-
   } catch (error) {
     console.error("Email error:", error);
     return Response.json(
