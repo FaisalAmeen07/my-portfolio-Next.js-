@@ -45,7 +45,7 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://faisalameenportfolio.vercel.app//api/contact", {
+      const res = await fetch("https://faisalameenportfolio.vercel.app//Message_Sending", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form)
