@@ -55,7 +55,7 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      const res = await fetch("", {
+      const res = await fetch("/api/EmailConfig", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
