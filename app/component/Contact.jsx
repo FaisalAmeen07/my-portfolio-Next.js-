@@ -67,7 +67,7 @@ export default function Contact() {
         toast.success("Your message has been sent successfully!");
         setForm({ name: "", email: "", message: "" });
       } else {
-        toast.error("Failed to send message.");
+        toast.error("Message Failed to send.");
       }
     } catch (error) {
       toast.error("Server error. Please try again.");
