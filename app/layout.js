@@ -4,11 +4,7 @@ import Header from "./component/Header.jsx";
 import Footer from "./component/Footer";
 import { ThemeProvider } from "./component/ThemeContext";
 
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-inter",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Faisal Amin Portfolio",
