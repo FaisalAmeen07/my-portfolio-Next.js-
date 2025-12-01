@@ -1,18 +1,10 @@
 "use client";
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
 import { Mail, Phone, Send, Facebook, Linkedin, Github } from "lucide-react";
 
-const FormField = ({
-  name,
-  label,
-  value,
-  onChange,
-  type = "text",
-  required,
-}) => (
+const FormField = ({ name, label, value, onChange, type = "text", required }) => (
   <div className="relative">
     <input
       type={type}
@@ -26,12 +18,8 @@ const FormField = ({
     />
     <label
       htmlFor={name}
-      className="absolute text-[#2ec4b6] duration-300 transform -translate-y-6 scale-75 top-3 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-6 peer-focus:bg-[#2ec4b6] peer-focus:text-white
-      peer-focus:px-2 peer-focus:rounded-md"
-       style={{
-              backgroundColor: "var(--skills-bg)", 
-              color: "var(--text-color)",
-            }}
+      className="absolute duration-300 transform -translate-y-6 scale-75 top-3 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-6 peer-focus:px-2 peer-focus:rounded-md"
+      style={{ backgroundColor: "var(--skills-bg)", color: "var(--text-color)" }}
     >
       {label}
     </label>
@@ -46,46 +34,41 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!form.message || !form.name || !form.email) {
       toast.error("Please fill in all fields.");
       return;
     }
+
     setLoading(true);
 
-    emailjs
-      .send(
-        "service_m30hmyi",
-        "template_r0sc6b9",
-        {
-          from_name: form.name,
-          to_name: "Faisal Amin",
-          from_email: form.email,
-          to_email: "odeveloper56@gmail.com",
-          message: form.message,
-        },
-        "HQ1Pj8HWe4P1zXNst"
-      )
-      .then(() => {
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form)
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
         toast.success("Your message has been sent successfully!");
         setForm({ name: "", email: "", message: "" });
-      })
-      .catch((error) => {
-        console.error("EMAILJS ERROR:", error);
-        toast.error("Sorry, failed to send your message.");
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+      } else {
+        toast.error("Failed to send message.");
+      }
+    } catch (error) {
+      toast.error("Server error. Please try again.");
+    }
+
+    setLoading(false);
   };
 
- return (
-    <section
-      id="contact"
-      className="container mx-auto px-4 lg:px-20 mt-20 relative overflow-hidden"
-    >
-      <div className="absolute inset-0  rounded-3xl -z-10" />
+  return (
+    <section id="contact" className="container mx-auto px-4 lg:px-20 mt-20 relative overflow-hidden">
+      <div className="absolute inset-0 rounded-3xl -z-10" />
 
       <Toaster
         position="bottom-center"
@@ -94,19 +77,15 @@ export default function Contact() {
             background: "#e5e7eb",
             color: "#1f2937",
             boxShadow: "5px 5px 10px #1e293b, -5px -5px 10px #334155",
-          },
-          success: { iconTheme: { primary: "#16a34a", secondary: "#f0fdf4" } },
-          error: { iconTheme: { primary: "#dc2626", secondary: "#fef2f2" } },
+          }
         }}
       />
 
       <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-start">
+        {/* LEFT SECTION */}
         <motion.div
           className="p-8 rounded-3xl space-y-6 shadow-xl"
-           style={{
-              backgroundColor: "var(--skills-bg)", 
-              color: "var(--text-color)",
-            }}
+          style={{ backgroundColor: "var(--skills-bg)", color: "var(--text-color)" }}
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
@@ -114,59 +93,42 @@ export default function Contact() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-[#2ec4b6]">
             Get in Touch
           </h2>
-          <p className="text-lg" style={{ color: "var(--text-color)" }}>
-            Feel free to reach out via the form or directly through my contact
-            details.
-          </p>
 
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <Mail className="w-6 h-6 text-[#2ec4b6]" />
-              <span style={{ color: "var(--text-color)" }}>odeveloper56@gmail.com</span>
+              <span>odeveloper56@gmail.com</span>
             </div>
             <div className="flex items-center space-x-3">
               <Phone className="w-6 h-6 text-[#2ec4b6]" />
-              <span style={{ color: "var(--text-color)" }}>+92 3062672226</span>
+              <span>+92 3062672226</span>
             </div>
+
             <div className="flex space-x-4 mt-6">
-              <a
-                href="https://www.facebook.com/share/14LYnodXV7z/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Facebook className="w-7 h-7 text-[#2ec4b6] hover:text-[#1d8e83]" />
+              <a href="https://www.facebook.com/share/14LYnodXV7z/" target="_blank">
+                <Facebook className="w-7 h-7 text-[#2ec4b6]" />
               </a>
-              <a
-                href="https://www.linkedin.com/in/faisal-ameen07/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Linkedin className="w-7 h-7 text-[#2ec4b6] hover:text-[#1d8e83]" />
+              <a href="https://www.linkedin.com/in/faisal-ameen07/" target="_blank">
+                <Linkedin className="w-7 h-7 text-[#2ec4b6]" />
               </a>
-              <a
-                href="https://github.com/FaisalAmeen07/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Github className="w-7 h-7 text-[#2ec4b6] hover:text-[#1d8e83]" />
+              <a href="https://github.com/FaisalAmeen07" target="_blank">
+                <Github className="w-7 h-7 text-[#2ec4b6]" />
               </a>
             </div>
           </div>
         </motion.div>
 
+        {/* RIGHT SECTION: FORM */}
         <motion.div
           className="p-8 rounded-3xl shadow-xl"
-           style={{
-              backgroundColor: "var(--skills-bg)", 
-              color: "var(--text-color)",
-            }}
+          style={{ backgroundColor: "var(--skills-bg)", color: "var(--text-color)" }}
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="rounded-2xl border border-[#2ec4b6]" style={{ color: "var(--text-color)" }}>
+              <div className="rounded-2xl border border-[#2ec4b6]">
                 <FormField
                   name="name"
                   label="Your Name"
@@ -176,7 +138,7 @@ export default function Contact() {
                   required
                 />
               </div>
-              <div className="rounded-2xl border border-[#2ec4b6]" style={{ color: "var(--text-color)" }}>
+              <div className="rounded-2xl border border-[#2ec4b6]">
                 <FormField
                   name="email"
                   label="Your Email"
@@ -188,24 +150,21 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="relative">
-              <textarea
-                id="message"
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                required
-                rows={6}
-                placeholder="Write your valuable message here..."
-                className="block w-full px-4 py-3 rounded-xl appearance-none peer focus:outline-none focus:ring-0 resize-none shadow-inner border border-[#2ec4b6] transition-shadow duration-300"
-                style={{ color: "var(--text-color)" }}
-              ></textarea>
-            </div>
+            <textarea
+              id="message"
+              name="message"
+              value={form.message}
+              onChange={handleChange}
+              required
+              rows={6}
+              placeholder="Write your valuable message here..."
+              className="block w-full px-4 py-3 rounded-xl appearance-none peer focus:outline-none focus:ring-0 resize-none shadow-inner border border-[#2ec4b6]"
+            ></textarea>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-4 rounded-xl font-bold text-lg text-[#2ec4b6] border disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+              className="w-full py-4 rounded-xl font-bold text-lg text-[#2ec4b6] border disabled:opacity-50"
             >
               {loading ? (
                 <div className="flex items-center justify-center space-x-2">
