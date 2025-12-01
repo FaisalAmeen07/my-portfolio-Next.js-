@@ -162,7 +162,7 @@ export default function HeroSection() {
         </div>
 
         <a
-          href="/Resume.pdf"
+          href="/faisal_ameen-Cv.pdf"
           download="Faisal_Ameen_Resume.pdf"
           className="inline-flex items-center gap-2 px-5 py-2 mt-8 bg-[#2ec4b6] border border-[#2ec4b6] rounded-full text-sm sm:text-base text-white backdrop-blur-sm hover:bg-[#38a69b] dark:hover:bg-[#2ec4b6]/80 transition-all duration-300"
         >
@@ -193,7 +193,7 @@ export default function HeroSection() {
             }}
           />
           <MotionImage
-            src="/Profile-img.png"
+            src="/Profile_Db.png"
             alt="Faisal Ameen"
             width={300}
             height={300}
