@@ -4,7 +4,14 @@ import toast, { Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
 import { Mail, Phone, Send, Facebook, Linkedin, Github } from "lucide-react";
 
-const FormField = ({ name, label, value, onChange, type = "text", required }) => (
+const FormField = ({
+  name,
+  label,
+  value,
+  onChange,
+  type = "text",
+  required,
+}) => (
   <div className="relative">
     <input
       type={type}
@@ -19,7 +26,10 @@ const FormField = ({ name, label, value, onChange, type = "text", required }) =>
     <label
       htmlFor={name}
       className="absolute duration-300 transform -translate-y-6 scale-75 top-3 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-6 peer-focus:px-2 peer-focus:rounded-md"
-      style={{ backgroundColor: "var(--skills-bg)", color: "var(--text-color)" }}
+      style={{
+        backgroundColor: "var(--skills-bg)",
+        color: "var(--text-color)",
+      }}
     >
       {label}
     </label>
@@ -45,10 +55,10 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://faisalameenportfolio.vercel.app/api/send", {
+      const res = await fetch("/api/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form)
+        body: JSON.stringify(form),
       });
 
       const data = await res.json();
@@ -67,7 +77,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="container mx-auto px-4 lg:px-20 mt-20 relative overflow-hidden">
+    <section
+      id="contact"
+      className="container mx-auto px-4 lg:px-20 mt-20 relative overflow-hidden"
+    >
       <div className="absolute inset-0 rounded-3xl -z-10" />
 
       <Toaster
@@ -77,7 +90,7 @@ export default function Contact() {
             background: "#e5e7eb",
             color: "#1f2937",
             boxShadow: "5px 5px 10px #1e293b, -5px -5px 10px #334155",
-          }
+          },
         }}
       />
 
@@ -85,7 +98,10 @@ export default function Contact() {
         {/* LEFT SECTION */}
         <motion.div
           className="p-8 rounded-3xl space-y-6 shadow-xl"
-          style={{ backgroundColor: "var(--skills-bg)", color: "var(--text-color)" }}
+          style={{
+            backgroundColor: "var(--skills-bg)",
+            color: "var(--text-color)",
+          }}
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
@@ -105,10 +121,16 @@ export default function Contact() {
             </div>
 
             <div className="flex space-x-4 mt-6">
-              <a href="https://www.facebook.com/share/14LYnodXV7z/" target="_blank">
+              <a
+                href="https://www.facebook.com/share/14LYnodXV7z/"
+                target="_blank"
+              >
                 <Facebook className="w-7 h-7 text-[#2ec4b6]" />
               </a>
-              <a href="https://www.linkedin.com/in/faisal-ameen07/" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/faisal-ameen07/"
+                target="_blank"
+              >
                 <Linkedin className="w-7 h-7 text-[#2ec4b6]" />
               </a>
               <a href="https://github.com/FaisalAmeen07" target="_blank">
@@ -121,7 +143,10 @@ export default function Contact() {
         {/* RIGHT SECTION: FORM */}
         <motion.div
           className="p-8 rounded-3xl shadow-xl"
-          style={{ backgroundColor: "var(--skills-bg)", color: "var(--text-color)" }}
+          style={{
+            backgroundColor: "var(--skills-bg)",
+            color: "var(--text-color)",
+          }}
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
