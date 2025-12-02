@@ -39,7 +39,7 @@ const SectionHeader = ({ children }) => (
 export default function ResumePage() {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/Resume.pdf';
+    link.href = '/faisal_ameen-Cv.pdf';
     link.download = 'Faisal-Amin-Resume.pdf';
     link.click();
   };
