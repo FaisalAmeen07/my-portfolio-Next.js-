@@ -70,22 +70,34 @@
   },
   {
     "_id": 4,
-    "projectName": "Tic-Tac-Toy",
-    "projectImage": "/tic-tac-toy.png",
-    "slogan": "Tic Tac Toy is a interactive browser-based game built using pure HTML, CSS, and JavaScript. It features smooth gameplay.",
-    "features": [
-      "Interactive Gameplay: Two-player mode with smooth turn-based interaction.",
-      "Smart Game Logic: Detects win, draw, and reset conditions automatically.",
-      "Clean UI Design: Simple and attractive layout built using HTML and CSS.",
-      "Responsive Layout: Fully functional on desktop, tablet, and mobile screens.",
-      "Restart Option: Instantly reset the board and start a new game.",
-      "Lightweight & Fast: Built purely with vanilla JavaScript, no frameworks required."
-    ],
-    "technologies": ["HTML5", "CSS3", "JavaScript", "vercel"],
-    "liveLink": "https://tic-tac-toy-javascript.vercel.app/",
-    "clientLink": "https://github.com/FaisalAmeen07/Tic-Tac-Toy-Javascript",
-    "serverLink": "N/A",
-    "description": "A classic Tic Tac Toe game built using HTML, CSS, and JavaScript. This project focuses on JavaScript’s core logic building — handling turns, checking winning conditions, and updating the UI dynamically. The game features a clean interface and smooth user interaction, offering a fun and responsive experience for all devices."
+    "projectName": "Elevate Bright Tec APP",
+    "projectImage": "/mobile.jpg",
+    "slogan": "EBT Mobile App is a modern CRM application built with React Native Expo.",
+     "features": [
+    "Secure Authentication: Role-based login and access control.",
+    "Employee Management: Manage employee profiles and information efficiently.",
+    "Attendance Tracking: Monitor employee attendance and work hours.",
+    "Timesheet Management: Record and review daily work logs.",
+    "Task Assignment: Create, assign, and track employee tasks.",
+    "Real-Time Messaging: Seamless communication between team members.",
+    "Dashboard Analytics: View key business insights and performance metrics.",
+    "Responsive Mobile Experience: Optimized for Android and iOS devices.",
+    "API Integration: Connected with Express.js backend services.",
+    "Persistent Data Storage: Maintain user data and application state securely."
+  ],
+    "technologies": [
+"React Native",
+"Expo Router",
+"JavaScript",
+"Context API",
+"Socket.IO",
+"Express.js",
+"PostgreSQL"
+],
+"liveLink": "APK Coming Soon",
+"clientLink": "https://github.com/FaisalAmeen07/EBT-mobile-App",
+    "serverLink": "Private",
+    "description": "A modern CRM mobile application developed for Elevate Bright Tec to streamline employee management, attendance tracking, task management, timesheets, and team communication. Built with React Native and Expo Router, the application delivers a responsive mobile experience with secure authentication, real-time interactions, and seamless backend integration."
   },
   {
     "_id": 5,
@@ -100,29 +112,36 @@
     ],
     "technologies": ["HTML5", "CSS3", "Media-Query", "vercel"],
     "liveLink": "https://capital-shop-ecommernce-landing-page.netlify.app/",
-    "clientLink": "https://github.com/FaisalAmeen07/Tic-Tac-Toy-Javascript",
+    "clientLink": "https://github.com/FaisalAmeen07/ecomerence_LandingPage-HTML-CSS-MediaQueries",
     "description": "A Simple and attractive layout built using HTML, CSS, and MediaQuery. This project focuses on MediaQuery that responsive on Multiple size of Screen. "
   },
-  {
-    "_id": 6,
-    "projectName": "My Portfolio",
-    "projectImage": "/Portfollio.png",
-    "slogan": "Developed a modern and responsive personal portfolio website using Next.js. and Tailwind CSS.",
-    "features": [
-      "Next.js routing for fast and dynamic navigation",
-      "Tailwind CSS for a fully responsive and clean UI design",
-      "Framer Motion animations for smooth and interactive transitions",
-      "Integrated Email.js for real-time message sending",
-      "SEO-optimized and performance-focused build"
-    ],
-    "technologies": ["Next.js",
-    "React.js",
-    "Tailwind CSS",
-    "Framer Motion",
-    "Email.js",
-    "Lucide React Icons"],
-    "liveLink": "https://faisalameenportfolio.vercel.app/",
-    "clientLink": "https://github.com/FaisalAmeen07/my-portfolio-Next.js-",
-    "description": "Developed a modern and responsive personal portfolio website using Next.js and Tailwind CSS with smooth Framer Motion animations. Integrated Email.js for direct contact form submissions. The site showcases projects, skills, and experience with a clean, user-friendly design that adapts seamlessly across all devices."
-  }
+ {
+"_id": 6,
+"projectName": "Elevate Bright Tec CRM",
+"projectImage": "/DashboardUI.jpeg",
+"slogan": "Developed a modern CRM and workforce management platform using Next.js, TypeScript, and Express.js.",
+"features": [
+"Role-based authentication and secure user management",
+"Employee attendance and timesheet tracking system",
+"Task assignment and workflow management",
+"Real-time team communication and messaging",
+"Interactive dashboard with business analytics",
+"Responsive design optimized for desktop and mobile devices"
+],
+"technologies": [
+"Next.js",
+"React.js",
+"TypeScript",
+"Tailwind CSS",
+"Express.js",
+"PostgreSQL",
+"Prisma ORM",
+"Axios"
+],
+"liveLink": "https://evelatebrighttec.netlify.app/",
+"clientLink": "https://github.com/FaisalAmeen07/EBT-Frontend",
+"serverLink": "N/A",
+"description": "Developed a comprehensive CRM and workforce management platform for Elevate Bright Tec. The system enables organizations to manage employees, attendance records, timesheets, tasks, and internal communication from a centralized dashboard. Built with Next.js, TypeScript, Express.js, and PostgreSQL, the application provides secure authentication, responsive user interfaces, and scalable business management capabilities."
+}
+
 ]
