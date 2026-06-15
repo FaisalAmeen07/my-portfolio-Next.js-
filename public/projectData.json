@@ -72,7 +72,7 @@
     "_id": 4,
     "projectName": "Elevate Bright Tec APP",
     "projectImage": "/mobile.jpg",
-    "slogan": "EBT Mobile App is a modern CRM application built with React Native Expo.",
+    "slogan": "EBT Mobile App is a modern CRM application built with React Native Expo CLI and deploy or Run by APK files",
      "features": [
     "Secure Authentication: Role-based login and access control.",
     "Employee Management: Manage employee profiles and information efficiently.",
