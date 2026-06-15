@@ -94,8 +94,9 @@
 "Express.js",
 "PostgreSQL"
 ],
-"liveLink": "APK Coming Soon",
-"clientLink": "https://github.com/FaisalAmeen07/EBT-mobile-App",
+    "liveLink": "",
+    "liveLinkLabel": "APK Coming Soon",
+    "clientLink": "https://github.com/FaisalAmeen07/EBT-mobile-App",
     "serverLink": "Private",
     "description": "A modern CRM mobile application developed for Elevate Bright Tec to streamline employee management, attendance tracking, task management, timesheets, and team communication. Built with React Native and Expo Router, the application delivers a responsive mobile experience with secure authentication, real-time interactions, and seamless backend integration."
   },
@@ -115,33 +116,32 @@
     "clientLink": "https://github.com/FaisalAmeen07/ecomerence_LandingPage-HTML-CSS-MediaQueries",
     "description": "A Simple and attractive layout built using HTML, CSS, and MediaQuery. This project focuses on MediaQuery that responsive on Multiple size of Screen. "
   },
- {
-"_id": 6,
-"projectName": "Elevate Bright Tec CRM",
-"projectImage": "/DashboardUI.jpeg",
-"slogan": "Developed a modern CRM and workforce management platform using Next.js, TypeScript, and Express.js.",
-"features": [
-"Role-based authentication and secure user management",
-"Employee attendance and timesheet tracking system",
-"Task assignment and workflow management",
-"Real-time team communication and messaging",
-"Interactive dashboard with business analytics",
-"Responsive design optimized for desktop and mobile devices"
-],
-"technologies": [
-"Next.js",
-"React.js",
-"TypeScript",
-"Tailwind CSS",
-"Express.js",
-"PostgreSQL",
-"Prisma ORM",
-"Axios"
-],
-"liveLink": "https://evelatebrighttec.netlify.app/",
-"clientLink": "https://github.com/FaisalAmeen07/EBT-Frontend",
-"serverLink": "N/A",
-"description": "Developed a comprehensive CRM and workforce management platform for Elevate Bright Tec. The system enables organizations to manage employees, attendance records, timesheets, tasks, and internal communication from a centralized dashboard. Built with Next.js, TypeScript, Express.js, and PostgreSQL, the application provides secure authentication, responsive user interfaces, and scalable business management capabilities."
-}
-
+  {
+    "_id": 6,
+    "projectName": "Elevate Bright Tec CRM",
+    "projectImage": "/DashboardUI.jpeg",
+    "slogan": "Developed a modern CRM and workforce management platform using Next.js, TypeScript, and Express.js.",
+    "features": [
+      "Role-based authentication and secure user management",
+      "Employee attendance and timesheet tracking system",
+      "Task assignment and workflow management",
+      "Real-time team communication and messaging",
+      "Interactive dashboard with business analytics",
+      "Responsive design optimized for desktop and mobile devices"
+    ],
+    "technologies": [
+      "Next.js",
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Axios"
+    ],
+    "liveLink": "https://evelatebrighttec.netlify.app/",
+    "clientLink": "https://github.com/FaisalAmeen07/EBT-Frontend",
+    "serverLink": "N/A",
+    "description": "Developed a comprehensive CRM and workforce management platform for Elevate Bright Tec. The system enables organizations to manage employees, attendance records, timesheets, tasks, and internal communication from a centralized dashboard. Built with Next.js, TypeScript, Express.js, and PostgreSQL, the application provides secure authentication, responsive user interfaces, and scalable business management capabilities."
+  }
 ]

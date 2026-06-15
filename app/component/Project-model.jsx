@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { ExternalLink, Globe, X } from "lucide-react";
 import Image from "next/image";
 
+const isValidUrl = (url) =>
+  typeof url === "string" && /^https?:\/\//i.test(url.trim());
+
 export default function ProjectModal({ project, onClose }) {
   if (!project) return null;
 
@@ -43,6 +46,7 @@ export default function ProjectModal({ project, onClose }) {
         <Image
           width={800}
           height={450}
+          sizes="(max-width: 768px) 100vw, 80vw"
           src={project.projectImage}
           alt={project.projectName}
           className="w-full rounded-xl mt-4 mb-4 object-cover border border-[#2ec4b6]/20"
@@ -90,7 +94,7 @@ export default function ProjectModal({ project, onClose }) {
 
         {/* Links */}
         <div className="flex flex-wrap gap-3 mt-6 pt-6 border-t border-[#2ec4b6]/30">
-          {project.liveLink && (
+          {isValidUrl(project.liveLink) ? (
             <a
               href={project.liveLink}
               target="_blank"
@@ -100,7 +104,11 @@ export default function ProjectModal({ project, onClose }) {
               <Globe size={18} />
               <span>Live Site</span>
             </a>
-          )}
+          ) : project.liveLinkLabel ? (
+            <span className="flex items-center gap-2 px-5 py-3 rounded-full border-2 border-[#2ec4b6]/60 text-[#2ec4b6] font-medium">
+              {project.liveLinkLabel}
+            </span>
+          ) : null}
           {project.clientLink && (
             <a
               href={project.clientLink}

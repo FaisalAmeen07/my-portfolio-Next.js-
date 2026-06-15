@@ -6,6 +6,9 @@ import { ExternalLink, FileCode2 } from "lucide-react";
 import ProjectModal from "../component/Project-model.jsx";
 import Image from "next/image";
 
+const isValidUrl = (url) =>
+  typeof url === "string" && /^https?:\/\//i.test(url.trim());
+
 export default function Projects() {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
@@ -67,8 +70,8 @@ export default function Projects() {
                 alt={`Screenshot of ${project.projectName}`}
                 width={800}
                 height={450}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="aspect-video w-full object-fill rounded-lg shadow-xl border-2 border-[#0ab9a7]"
-                transition={{ type: "spring", stiffness: 250 }}
               />
             </div>
 
@@ -91,14 +94,20 @@ export default function Projects() {
               <p className="mt-2 text-sm leading-relaxed">{project.slogan}</p>
 
               <div className="flex justify-center gap-4 mt-6 pt-5 border-t border-[#2ec4b6]">
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-full border-2 border-[#2ec4b6] px-4 py-2 text-sm font-semibold text-[#2ec4b6] transition-all duration-300 hover:scale-105 hover:bg-[#2ec4b6] hover:text-white"
-                >
-                  <ExternalLink size={16} /> Live
-                </a>
+                {isValidUrl(project.liveLink) ? (
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 rounded-full border-2 border-[#2ec4b6] px-4 py-2 text-sm font-semibold text-[#2ec4b6] transition-all duration-300 hover:scale-105 hover:bg-[#2ec4b6] hover:text-white"
+                  >
+                    <ExternalLink size={16} /> Live
+                  </a>
+                ) : project.liveLinkLabel ? (
+                  <span className="flex items-center gap-2 rounded-full border-2 border-[#2ec4b6]/60 px-4 py-2 text-sm font-semibold text-[#2ec4b6]/80">
+                    {project.liveLinkLabel}
+                  </span>
+                ) : null}
 
                 <button
                   onClick={() => setSelectedProject(project)}

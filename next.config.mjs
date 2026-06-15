@@ -1,7 +1,7 @@
 const nextConfig = {
   images: {
-    unoptimized: false
-  }
+    unoptimized: true,
+  },
 }
 
 export default nextConfig;
