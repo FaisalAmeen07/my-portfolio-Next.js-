@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 👨‍💻 Faisal Ameen Portfolio
 
-## Getting Started
+<p align="center">
+  <img src="./public/Porfolio-banner.jpeg" alt="Portfolio Banner" />
+</p>
 
-First, run the development server:
+<p align="center">
+  Software Engineer | Full-Stack Web Developer | React • Next.js • Node.js • PostgreSQL
+</p>
+
+<p align="center">
+  A modern portfolio website showcasing my projects, skills, experience, and professional journey.
+</p>
+
+---
+
+## 🚀 Live Demo
+
+🔗 https://faisalportfolio-beta.vercel.app/
+
+---
+
+## 📖 Overview
+
+This portfolio website was built to showcase my professional experience, technical skills, and software development projects. The platform provides visitors with a comprehensive view of my work, achievements, and contact information through a clean and interactive user experience.
+
+---
+
+
+## ✨ Features
+
+* Modern and responsive portfolio design
+* Dynamic project showcase section
+* Skills and technology highlights
+* Smooth page transitions and animations
+* Contact form integration
+* Mobile-friendly user experience
+* SEO optimized structure
+* Fast performance and accessibility
+
+---
+
+## 🛠 Tech Stack
+
+* Next.js
+* React.js
+* JavaScript
+* Tailwind CSS
+* Framer Motion
+* Email.js
+* Lucide React Icons
+* Vercel
+
+---
+
+## 📂 Project Structure
+
+```text
+app/
+public/
+components/
+data/
+hooks/
+styles/
+utils/
+```
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone <repository-url>
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🌟 Sections Included
 
-To learn more about Next.js, take a look at the following resources:
+* Hero Section
+* About Me
+* Skills
+* Experience
+* Projects
+* Contact Form
+* Social Links
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 👨‍💻 Developer
 
-## Deploy on Vercel
+### Faisal Ameen
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Software Engineer | Full-Stack Web Developer
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📧 Open to freelance, remote, and full-time opportunities.
+
+Portfolio:
+https://faisalportfolio-beta.vercel.app/
+
+LinkedIn:
+https://www.linkedin.com/in/faisal-ameen07/
+
+GitHub:
+https://github.com/FaisalAmeen07
+
+---
+
+## 📄 License
+
+This project is open source and available under the MIT License.
